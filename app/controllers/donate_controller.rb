@@ -4,6 +4,7 @@ class DonateController < ApplicationController
     @contact_form.request = request
     if @contact_form.valid? && !@contact_form.spam?
       @contact_form.deliver
+      DonationMailer.donation_email(@contact_form).deliver
       flash[:notice] = "Email sent successfully, We will notify you if further action must be taken"
       redirect_to :controller => 'donations', :action => 'receipt', :id => params[:contact_form][:donation_id]
     else

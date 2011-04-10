@@ -1,4 +1,4 @@
-1302454517
+1302470099
 ActionView	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	module ActionView
 Application	/Users/evan/RailsApps/pieceofthefuture/config/application.rb	  class Application 
 ApplicationController	/Users/evan/RailsApps/pieceofthefuture/app/controllers/application_controller.rb	class ApplicationController 
@@ -25,6 +25,7 @@ DirtyPost	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/tes
 DonateController	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donate_controller.rb	class DonateController 
 DonateHelper	/Users/evan/RailsApps/pieceofthefuture/app/helpers/donate_helper.rb	module DonateHelper
 Donation	/Users/evan/RailsApps/pieceofthefuture/app/models/donation.rb	class Donation 
+DonationMailer	/Users/evan/RailsApps/pieceofthefuture/app/mailers/donation_mailer.rb	class DonationMailer 
 DonationsController	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	class DonationsController 
 DonationsHelper	/Users/evan/RailsApps/pieceofthefuture/app/helpers/donations_helper.rb	module DonationsHelper
 DynamicForm	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	    module DynamicForm
@@ -85,6 +86,7 @@ dirCheck	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	fun
 dirNodeCheck	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function dirNodeCheck( dir, cur, doneName, checkSet, nodeCheck, isXML )
 disableFormElements	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/rails.js	function disableFormElements(form)
 doScrollCheck	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function doScrollCheck()
+donation_email	/Users/evan/RailsApps/pieceofthefuture/app/mailers/donation_mailer.rb	  def donation_email(contact_form)
 done	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function done( status, statusText, responses, headers )
 down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410013928_devise_create_users.rb	  def self.down
 down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410013929_create_histories_table.rb	  def self.down
@@ -171,6 +173,7 @@ show	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller
 show	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def show
 show_title?	/Users/evan/RailsApps/pieceofthefuture/app/helpers/layout_helper.rb	  def show_title?
 stylesheet	/Users/evan/RailsApps/pieceofthefuture/app/helpers/layout_helper.rb	  def stylesheet(*args)
+support_email	/Users/evan/RailsApps/pieceofthefuture/app/mailers/donation_mailer.rb	  def support_email(contact_mailer)
 t	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function t( gotoEnd )
 teacher_with_class	/Users/evan/RailsApps/pieceofthefuture/app/models/classroom.rb	  def teacher_with_class
 testChange	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function testChange( e )
