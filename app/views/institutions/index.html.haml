@@ -20,7 +20,8 @@
                   = text_field_tag :search, params[:search] 
                   = submit_tag "Search", :name => nil
             #institutions= render 'institutions'
-            = will_paginate @institutions, :param_name => :institutions_page
+            - unless @institutions.nil?
+              = will_paginate @institutions, :param_name => :institutions_page
             %br
             %br
             = link_to 'Create Institution', new_institution_path, :class => 'blue styled_button', :style => 'color:#fff;'
