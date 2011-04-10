@@ -32,11 +32,11 @@ class Institution < ActiveRecord::Base
   attr_accessible :name, :school_site, :contact_name, :contact_email, :contact_title,
     :street_one, :street_two, :city, :state, :postal_code, :phone, :wish_list
     
-  def self.search(search)  
-    if search  
-      where('name LIKE ?', "#{search}")  
-    else  
-      scope
-    end  
-  end
+    #def self.search(search)  
+    #if search  
+      #where('name LIKE ?', "#{search}")  
+      #else  
+      #scope
+      #end  
+      #end
 end
