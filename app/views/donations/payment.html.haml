@@ -1,0 +1,186 @@
+- title "Piece of the Future => Buy-A-Box"
+- content_for :head do
+  :javascript
+    function popitup(url) {
+    	newwindow=window.open(url,'name','height=300,width=300');
+    	if (window.focus) {newwindow.focus()}
+    	return false;
+    }
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:align => "left", :style => "background: url('/images/thecontent_quotebg_green.png') no-repeat; height: 155px;", :valign => "top"}
+      %img{:height => "155", :src => "/images/thecontent_quote_02.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"} &nbsp;
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %img{:height => "64", :src => "/images/thecontent_subtitle_form.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"}
+      = content_tag('div', "There was an error processing your payment: #{@paypal_error}", :class => 'error') if @paypal_error
+      - if @creditcard.errors.any?
+        .error
+          Errors encountered with your credit card information:
+          %ul
+            = @creditcard.errors.full_messages.map {|m| content_tag('li', m)}
+      = form_tag 'credit' do
+        %table
+          %tr
+            %td.label
+              = label_tag :first_name, 'First Name:'
+              %span.required *
+            %td
+              = text_field_tag :first_name, ''
+          %tr
+            %td.label
+              = label_tag :last_name, 'Last Name:'
+              %span.required *
+            %td
+              = text_field_tag :last_name, ''
+          %tr
+            %td &nbsp;
+            %td{:style => 'font-size:12px;'}
+              Choose an Institution or Classroom to send Prize
+          %tr
+            %td.label
+              = label_tag :institution, 'School:'
+            %td
+              = select_tag :institution, options_from_collection_for_select(Institution.order("name ASC"), "id", "name"), :include_blank => true
+              %br
+              %span.small
+                = link_to "My Institution's not listed", "javascript:void(0);", :id => 'custom_institution_link'
+              .custom_fields
+                %table
+                  %tr
+                    %td.label
+                      = label_tag :custom_institution_name, 'Institution Name:'
+                    %td
+                      = text_field_tag :custom_institution_name, ''
+                  %tr
+                    %td{:colspan => '2'}
+                      %span.small
+                        = link_to 'Or create a new Institution', 'http://pieceofthefuture.org/institutions/new'
+          %tr
+            %td.label
+              = label_tag :classroom, 'Classroom:'
+            %td
+              = grouped_collection_select :classroom, :id, Institution.order("name ASC"), :classrooms, :name, :id, :teacher_with_class, :include_blank => true
+              %br
+              %span.small
+                = link_to "My Classroom's not listed", "javascript:void(0);", :id => 'custom_classroom_link'
+              .custom_fields
+                %table
+                  %tr
+                    %td
+                      = label_tag :custom_classroom_name, 'Classroom Name:'
+                    %td
+                      = text_field_tag :custom_classroom_name, ''
+                  %tr
+                    %td
+                      = label_tag :custom_classroom_teacher, 'Classroom Teacher:'
+                    %td
+                      = text_field_tag :custom_classroom_teacher, ''
+                  %tr
+                    %td
+                      = label_tag :custom_classroom_school, 'Classroom School:'
+                    %td
+                      = text_field_tag :custom_classroom_school, ''
+                  %tr
+                    %td{:colspan => '2'}
+                      %span.small
+                        = link_to 'Or create a new Classroom', 'http://pieceofthefuture.org/classrooms/new'
+          %tr
+            %td.label
+              = label_tag :ad_website, 'Ad Website:'
+              http://
+            %td
+              = text_field_tag :ad_website, ''
+          %tr
+            %td.label
+              = label_tag :box_quantity, 'Number of Boxes:'
+              %span.required *
+            %td
+              = number_field_tag :box_quantity, 1, :size => '10', :min => '1'
+              x $5.00
+          %tr
+            %td.label{:style => 'font-size:12px;'}
+              *Note:
+            %td{:style => 'font-size:12px;'}
+              You may purchase 1 box or any even number of boxes
+          %tr
+            %td.label
+              = label_tag :address1, 'Address 1:'
+              %span.required *
+            %td
+              = text_field_tag :address1, ''
+          %tr
+            %td.label
+              = label_tag :address2, 'Address 2:'
+            %td
+              = text_field_tag :address2, ''
+          %tr
+            %td.label
+              = label_tag :city, 'City:'
+              %span.required *
+            %td
+              = text_field_tag :city, ''
+          %tr
+            %td.label
+              = label_tag :state, 'State:'
+              %span.required *
+            %td
+              = select_tag :state, options_for_select(@states)
+          %tr
+            %td.label
+              = label_tag :zip, 'Zip Code:'
+              %span.required *
+            %td
+              = text_field_tag :zip, ''
+          %tr
+            %td.label
+              = label_tag :phone, 'Phone Number:'
+              %span.required *
+            %td
+              = text_field_tag :phone, ''
+          %tr
+            %td.label
+              = label_tag :email, 'Billing Email:'
+              %span.required *
+            %td
+              = email_field_tag :email, ''
+          %tr
+            %td.label
+              = label_tag :number, 'Card Number:'
+              %span.required *
+            %td
+              = text_field_tag :number, ''
+          %tr
+            %td.label
+              = label_tag :type, 'Card Type:'
+              %span.required *
+            %td
+              = select_tag :type, options_for_select([["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]])
+          %tr
+            %td.label
+              %label Expiration:
+              %span.required *
+            %td
+              = select_tag :month, options_for_select(1 .. 12)
+              = select_tag :year, options_for_select(Time.now.year .. 10.years.from_now.year)
+          %tr
+            %td.label
+              = label_tag :verification_value, 'CVV:'
+              %span.required *
+            %td
+              = text_field_tag :verification_value, '', :size => 4
+              %span.small
+                %a{ :href => '/cvv.html', :onclick => "return popitup('/cvv.html')"} Click for information
+          %tr
+            %td.label{:style => 'vertical-align:middle;'}
+              %span#siteseal
+                %script{ :type => "text/javascript", :src => "https://seal.godaddy.com/getSeal?sealID=i86Ql3xw5KWAOeQcgtgtf0e9DPPAD6NVZTZB5Q7nZp71LDjRJK8"}
+            %td
+              = submit_tag 'Submit', :class => "styled_button blue", :style => 'color:white;'
+.clear
+- content_for :bannerimg do
+  %img{:height => "258", :src => "/images/bannerimg_puzzle.png", :width => "1000"}/

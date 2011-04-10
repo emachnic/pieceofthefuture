@@ -1,0 +1,27 @@
+- title "Piece of the Future => Donation Receipt"
+#page
+  .box_t1
+    .box_t2
+      .box_t3
+  .box_1
+    .box_2
+      .box_3
+        - if notice
+          .success
+            %p= notice
+        %p
+          %b Authorization:
+          = @donation.authorization
+        %p
+          %b Success:
+          = @donation.success
+        %p
+          %b Message:
+          = @donation.message
+        %p
+          %b Transaction ID:
+          = @donation.params["transaction_id"]
+        = link_to 'Continue to Step 2', '/donations/receipt'
+  .box_b1
+    .box_b2
+      .box_b3

@@ -1,0 +1,633 @@
+@charset "utf-8"
+@import 'type'
+@import 'tables'
+@import 'ux'
+@import 'helpers'
+@import 'forms'
+
+/* CSS Document
+
+/*
+ *
+ *DESIGNED & DEVELOPED BY COMPOSEDPIXELS
+ *2011
+ *____________________________________________________________________
+ 
+/*
+ *
+ *VARIABLES
+ *
+ *____________________________________________________________________
+$grid_border: 1px solid #222
+$light_green: #8bb44c
+
+/*
+ *
+ *Mixins
+ *
+ *____________________________________________________________________
+@mixin content_cell
+  :padding 20px
+
+
+/* 
+ *
+ *STRUCTURE
+ *
+ *____________________________________________________________________
+
+body, td, th
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 11px
+  color: #333
+
+body
+  background-image: url('../images/bgpuzzle.jpg'), url('../images/bggradient.jpg')
+  background-repeat: no-repeat, repeat-x
+  background-position: top center, top center
+  background-attachment: fixed
+  background-color: #8bb44c
+  margin-left: 0px
+  margin-top: 0px
+  margin-right: 0px
+  margin-bottom: 0px
+  
+*
+  margin: 0
+  padding: 0
+  
+a img
+  :border none
+  
+#preload
+  :display none
+  
+/* 
+ *
+ *LINKS
+ *
+ *____________________________________________________________________
+
+a
+  &:link, &:visited
+    color: #1475a2
+    text-decoration: none
+  &:hover
+    color: #8bb44c
+    text-decoration: none
+
+.blue .styled_button
+  color: #fff
+  height: 30px
+  line-height: 30px
+  padding: 5px 10px
+  &:visited
+    color: #fff
+    height: 30px
+    line-height: 30px
+    padding: 5px 10px
+  &:hover, &:active
+    color: #fff
+    white-space: nowrap
+
+
+/* 
+ *
+ *TYPE
+ *
+ *____________________________________________________________________
+
+.normal
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 11px
+
+.pagetitle
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 14px
+
+.menutitle a
+  font:
+    family: Arial, Helvetica, sans-serif
+    size: 14px
+  color: #333
+  display: block
+  line-height: 14px
+  &:hover
+    color: #8bb44c
+    text-decoration: none
+
+.menusubtitle
+  font:
+    size: 10px
+  letter-spacing: 0
+
+.copyright
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 9px
+
+h1, h2, h3, h4, h5, h6
+  font-family: Arial,Helvetica,sans-serif
+  color: $light_green
+  
+.required
+  :color red
+  
+.green_text
+  :color $light_green
+  
+.clear
+  :clear both
+
+/* 
+ *
+ *CONTENT
+ *
+ *____________________________________________________________________
+
+#wrapper
+  width: 100%
+  margin: 0 auto
+  top: 0px
+
+#top
+  width: 100%
+  height: 44px
+  background: url('../images/top_line.png') repeat-x
+  text-align: center
+  position: fixed
+  z-index: 20000
+  #insidetop 
+    width: 1004px
+    height: 44px
+    margin: 0 auto
+    #top_social a
+      :display block
+      :float left
+      :height 31px
+      :width 32px
+      :margin-top 0px
+    #topfacebook
+      :background url('../images/top_social.png') 0 0 no-repeat
+      &:hover
+        :background url('../images/top_social.png') 0 -31px no-repeat
+    #toptwitter
+      :background url('../images/top_social.png') 0 -62px no-repeat
+      &:hover
+        :background-position 0 -93px
+    #topmyspace
+      :background url('../images/top_social.png') 0 -124px no-repeat
+      &:hover
+        :background-position 0 -155px
+        
+.classrooms
+  :list-style none
+  :padding-top 1em
+  li
+    :padding 5px auto
+
+dd
+  :padding-bottom 1em
+
+#header
+  :width 1000px
+  :margin 0 auto
+  #kids
+    :float left
+    :height 181px
+    img
+      :border 0
+      :height 181px
+      :width 464px
+  #logo
+    :float right
+    :margin 0
+    :width 536px
+    #header_logo
+      :border 0
+      :height 163px
+      :margin-bottom -17px
+      :width 536px
+  #brought_by
+    :font-size 10px
+    :width 536px
+    :margin 10px 0 0 35px
+    a
+      :color #333
+      &:hover
+        :color #444
+
+#header
+  width: 1000px
+  height: 181px
+  padding-top: 11px
+
+#pixelwrapper
+  width: 1000px
+  background-repeat: no-repeat
+  background-color: #111
+  margin: auto
+  #grid
+    :background #000 url('../images/grid.gif') repeat
+    :border
+      :bottom $grid_border
+    height: 40000px
+    :position relative
+    .box_link_left, .box_link_right
+      :background url('../images/image_map.gif') no-repeat
+      :display block
+      :position absolute
+    #joshua_hogan_1
+      :background-position 0 0
+      :height 20px
+      :left 0
+      :top 0
+      :width 20px
+    #joshua_hogan_1_img
+      :background url('../images/boxes/box_ads.png') 0 0 no-repeat
+      :height 300px
+      :width 200px
+    #joshua_hogan_2
+      :background-position -20px 0
+      :height 20px
+      :left 20px
+      :top 0
+      :width 20px
+    #joshua_hogan_2_img
+      :background url('../images/boxes/box_ads.png') -210px 0 no-repeat
+      :height 200px
+      :width 300px
+    #joshua_hogan_3
+      :background-position -40px 0
+      :height 20px
+      :left 40px
+      :top 0
+      :width 10px
+    #joshua_hogan_3_img
+      :background url('../images/boxes/box_ads.png') -520px 0 no-repeat
+      :height 300px
+      :width 200px
+    #thomas_then_1
+      :background-position -50px 0
+      :height 20px
+      :left 50px
+      :top 0
+      :width 60px
+    #joshua_hogan_4
+      :background-position -100px 0
+      :height 30px
+      :left 100px
+      :top 0
+      :width 20px
+    #joshua_hogan_4_img
+      :background url('../images/boxes/box_ads.png') -520px 0 no-repeat
+      :height 300px
+      :width 200px
+    #joshua_hogan_5
+      :background-position -120px 0
+      :height 20px
+      :left 120px
+      :top 0
+      :width 50px
+    #joshua_hogan_5_img
+      :background url('../images/boxes/box_ads.png') -730px 0 no-repeat
+      :height 200px
+      :width 300px 
+    #wayne_peters_1
+      :background-position -170px 0
+      :height 100px
+      :left 170px
+      :top 0
+      :width 200px
+    #wayne_peters_1_img
+      :background url('../images/boxes/box_ads.png') -210px -210px no-repeat
+      :height 200px
+      :width 300px
+    #rick_muskewitz_1
+      :background-position -370px 0
+      :height 40px
+      :left 370px
+      :top 0
+      :width 250px
+    #rick_muskewitz_1_img
+      :background url('../images/boxes/box_ads.png') -730px -210px no-repeat
+      :height 200px
+      :width 300px
+    #chris_calkins_1
+      :background-position -620px 0
+      :height 40px
+      :left 620px
+      :top 0
+      :width 50px
+    #chris_calkins_1_img
+      :background url('../images/boxes/box_ads.png') 0 -420px no-repeat
+      :height 200px
+      :width 300px
+    #aj_beson_1
+      :background-position -670px 0
+      :height 40px
+      :left 670px
+      :top 0
+      :width 100px
+    #aj_beson_1_img
+      :background url('../images/boxes/box_ads.png') -310px -420px no-repeat
+      :height 200px
+      :width 300px
+    .tooltip
+      :background url('../images/white_large.png') no-repeat
+      :color #000
+      :display none
+      :font-size 14px
+      :padding 30px
+      :z-index 10000
+      .ad_img
+        :border 2px solid black
+        :box-shadow 2px 2px 4px #888
+        :margin-bottom 5px
+        :-moz-box-shadow 2px 2px 4px #888
+        :-webkit-box-shadow 2px 2px 4px #888
+      .label
+        :color #548a2c
+        :font-weight bold
+    .portrait
+      :background url('../images/tooltip_portrait.png') no-repeat
+      :height 600px
+      :width 400px
+    .landscape
+      :background url('../images/tooltip_landscape.png') no-repeat
+      :height 400px
+      :width 600px
+        
+.left_60
+  :float left
+  :padding-left 25px
+  :width 60%
+  
+.left_45
+  :float left
+
+.right_45
+  :float right
+
+.left_45, .right_45
+  :width 45%
+  
+.home_flash
+  :font-size 12px
+  :position absolute
+  :right 60px
+  :top 35px
+  :width 450px
+  
+.small
+  :font-size 10px
+
+form table td
+  :padding 5px 0
+  :vertical-align text-top
+  &.label
+    :text-align right
+  &.note
+    :font-size 12px
+    
+.classrooms td .plain
+  :width 100%
+
+#contentwrapper
+  width: 1000px
+  background-image: url('../images/whitetrans.png')
+  margin: 0 auto
+  .content_full
+    :float left
+    :margin 20px
+    :position relative
+    :text-align center
+    :width 960px
+  #social_buttons
+    :position absolute
+    :top 363px
+    :right 110px
+    
+.chalk_t1
+  :background url('../images/Chalkboard_topleft.png') 0 0 no-repeat
+  :height 20px
+  :margin 0 auto
+  :width 1039px
+  .chalk_t2
+    :background url('../images/Chalkboard_topright.png') 100% 0 no-repeat
+    :height 20px
+    :padding 0 20px 0 19px
+    .chalk_t3
+      :background url('../images/Chalkboard_topmid.png') 0 0 repeat-x
+      :height 20px
+.chalk_1
+  :background url('../images/Chalkboard_sideleft1.png') 0 0 repeat-y
+  :margin 0 auto
+  :min-height 100px
+  :width 1039px
+  .chalk_2
+    :background url('../images/Chalkboard_sideright1.png') 100% 0 repeat-y
+    :min-height 100px
+    :padding 0 20px 0 19px
+    .chalk_3
+      :background-color #000
+.chalk_b1
+  :background url('../images/Chalkboard_bottomleft.png') 0 0 no-repeat
+  :height 45px
+  :margin 0 auto
+  :width 1039px
+  .chalk_b2
+    :background url('../images/Chalkboard_bottomright.png') 100% 0 no-repeat
+    :height 45px
+    :padding 0 20px 0 19px
+    .chalk_b3
+      :background url('../images/Chalkboard_bottommid.png') 0 0 repeat-x
+      :height 45px
+      
+.box_t1
+  :background url('../images/thecontent_topleft.png') 0 0 no-repeat
+  :width 960px
+  :height 35px
+  .box_t2
+    :background url('../images/thecontent_topright.png') 100% 0 no-repeat
+    :height 35px
+    :padding 0 35px
+    .box_t3
+      :background url('../images/thecontent_topmid.png') 0 0 repeat-x
+      :height 35px
+.box_1
+  :background url('../images/thecontent_midleft.png') 0 0 repeat-y
+  :width 960px
+  .box_2
+    :background url('../images/thecontent_midright.png') 100% 0 repeat-y
+    :padding 0 35px
+    .box_3
+      :background-color #fff
+      table
+        :margin 0 auto
+.box_b1
+  :background url('../images/thecontent_bottomleft.png') 0 0 no-repeat
+  :height 35px
+  :width 960px
+  .box_b2
+    :background url('../images/thecontent_bottomright.png') 100% 0 no-repeat
+    :height 35px
+    :padding 0 35px
+    .box_b3
+      :background url('../images/thecontent_bottommid.png') 0 0 repeat-x
+      :height 35px
+
+#chalkboardheader, #chalkboardlefttop, #chalkboardleftbottom, #chalkboardrighttop, #chalkboardrightbottom
+  width: 1000px
+  background-color: #000
+  margin: auto
+
+#chalkboardbottom
+  width: 1000px
+  margin: auto
+
+#body_wide
+  width: 940px
+  height: 100px
+  margin: auto
+  background-color: #fff
+
+#body_left
+  width: 455px
+  margin-left: 30px
+  height: 150px
+  float: left
+  background-color: #888
+
+#body_right
+  width: 455px
+  margin-right: 30px
+  height: 150px
+  float: right
+  background-color: #333
+
+#body_quote
+  width: 940px
+  height: 80px
+  margin: auto
+  background-color: #fff
+
+#body_bottom
+  width: 940px
+  height: 130px
+  background-color: #444
+  margin: auto
+
+#bannerimg
+  width: 1000px
+  height: 258px
+  margin: auto
+  background-image: url('../images/bannerimgbg.png')
+
+#footerarea
+  width: 1000px
+  background-image: url('../images/footer_mid.png')
+  height: 120px
+  :margin 0 auto
+
+#footer_copyright
+  width: 1000px
+  margin: 0 auto
+  text-align: center
+
+#footer_left
+  padding-top: 50px
+  width: 460px
+  #composedpixels
+  #evanmachnic
+
+#footer_facebook
+  :background url('../images/footer_facebook_off.png') no-repeat
+  :display block
+  :height 29px
+  :width 49px
+  &:hover
+    :background url('../images/footer_facebook_on.png') no-repeat
+#footer_twitter
+  :background url('../images/footer_twitter_off.png') no-repeat
+  :display block
+  :height 29px
+  :width 49px
+  &:hover
+    :background url('../images/footer_twitter_on.png') no-repeat
+#footer_myspace
+  :background url('../images/footer_myspace_off.png') no-repeat
+  :display block
+  :height 29px
+  :width 49px
+  &:hover
+    :background url('../images/footer_myspace_on.png') no-repeat
+
+
+#footer_social
+  width: 460px
+  float: right
+  
+// Menu
+#menu
+  width: 1000px
+  height: 58px
+  text-align: center
+  background-color: #eee
+  :margin 0 auto
+  ul
+    :list-style none
+    :margin 0 auto
+    li
+      :display inline
+      :margin 0
+      :padding 0
+      &.splitter img
+        :height 58px
+        :float left
+        :width 2px
+  a
+    :background url('../images/result.png') no-repeat
+    :display block
+    :float left
+    :height 58px
+    :margin 0
+  #home
+    :background-position 0 0
+    :width 105px
+    &:hover, &.active
+      :background-position 0 -58px
+  #about
+    :background-position 0 -116px
+    :width 119px
+    &:hover, &.active
+      :background-position 0 -174px
+  #buyabox
+    :background-position 0 -232px
+    :width 114px
+    &:hover, &.active
+      :background-position 0 -290px
+  #prizes
+    :background-position 0 -348px
+    :width 106px
+    &:hover, &.active
+      :background-position 0 -406px
+  #classrooms
+    :background-position 0 -464px
+    :width 158px
+    &:hover, &.active
+      :background-position 0 -522px
+  #contributors
+    :background-position 0 -580px
+    :width 155px
+    &:hover, &.active
+      :background-position 0 -638px
+  #faq
+    :background-position 0 -696px
+    :width 94px
+    &:hover, &.active
+      :background-position 0 -754px
+  #contact_nav
+    :background-position 0 -812px
+    :width 135px
+    &:hover, &.active
+      :background-position 0 -870px

@@ -1,0 +1,33 @@
+- title "Piece of the Future => All Classrooms"
+#page
+  .box_t1
+    .box_t2
+      .box_t3
+  .box_1
+    .box_2
+      .box_3{ :style => "min-height: 30em;" }
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
+        %h1 Listing classrooms
+        - @classrooms.each do |classroom|
+          %dl
+            %dt= classroom.teacher
+            %dd= classroom.class
+            %dd= classroom.school
+            %dd= classroom.address
+            %dd= classroom.city
+            %dd= classroom.state
+            %dd= classroom.zip
+            %dd= classroom.phone
+            %dd= classroom.email
+            %dd= classroom.wish_list
+            %dd= link_to 'Show', classroom
+            /
+              %dd= link_to 'Edit', edit_classroom_path(classroom)
+              %dd= link_to 'Destroy', classroom, :confirm => 'Are you sure?', :method => :delete
+        %br/
+        %p
+          = link_to 'New Classroom', new_classroom_path, :class => 'styled_button blue'
+  .box_b1
+    .box_b2
+      .box_b3

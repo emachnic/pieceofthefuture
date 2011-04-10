@@ -1,0 +1,34 @@
+- title "Piece of the Future => #{@institution.name}"
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:align => "left", :style => "background: url('/images/thecontent_quotebg_lightpurp.png') no-repeat; height: 155px;", :valign => "top"}
+      %img{:height => "155", :src => "/images/thecontent_quote_04.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"} &nbsp;
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %img{:height => "64", :src => "/images/thecontent_subtitle_newinstitution.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"}
+      - if notice
+        .success= notice
+      %h4= @institution.name
+      %p
+        %b Contact name:
+        = @institution.contact_name
+      %p
+        %b Contact email:
+        = @institution.contact_email
+      %p
+        %b Contact title:
+        = @institution.contact_title
+      %p
+        %b Phone:
+        = @institution.phone
+      %p
+        %b Wish List:
+        = @institution.wish_list
+      \#{link_to 'Back to Institutions', institutions_path, :class => 'blue styled_button'}
+      = link_to 'New Classroom Page', new_classroom_path, :class => 'blue styled_button'
+- content_for :bannerimg do
+  %img{:height => "258", :src => "/images/bannerimg_kids.png", :width => "1000"}/

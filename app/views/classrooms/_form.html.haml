@@ -1,0 +1,56 @@
+= form_for @classroom do |f|
+  = f.error_messages
+  %table
+    %tr
+      %td.label
+        = f.label :teacher, 'Teacher Name:'
+        %span.required *
+      %td
+        = f.text_field :teacher
+        .form_input_notes Please enter name of teacher
+    %tr
+      %td.label
+        = f.label :class_name, 'Class Name:'
+        %span.required *
+      %td
+        = f.text_field :class_name
+        .form_input_notes Please enter name of classroom
+    %tr
+      %td.label
+        = f.label :institution, 'Institution:'
+      %td
+        = f.collection_select :institution_id, @institutions, :id, :name, :prompt => true
+        .form_input_notes Please enter your school
+        %br
+        = link_to "My Institution's not listed", new_institution_path
+    %tr
+      %td.label
+        = f.label :phone, 'Phone Number:'
+        %span.required *
+      %td
+        = f.text_field :phone
+        .form_input_notes Phone number required
+    %tr
+      %td.label
+        = f.label :email, 'Contact Email:'
+        %span.required *
+      %td
+        = f.email_field :email
+        .form_input_notes Valid email address required
+    %tr
+      %td.label
+        = f.label :email_confirmation, 'Confirm Email:'
+        %span.required *
+      %td
+        = f.email_field :email
+        .form_input_notes Confirm email
+    %tr
+      %td.label{:style => 'vertical-align:top;'}
+        = f.label :wish_list, 'Wish List:'
+      %td
+        = f.text_area :wish_list
+    %tr
+      %td &nbsp;
+      %td
+        = f.submit :class => "styled_button blue"
+        = link_to 'Back', institutions_path, :class => 'styled_button grey'

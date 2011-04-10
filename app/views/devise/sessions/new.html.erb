@@ -1,0 +1,31 @@
+<div style='width:800px;margin:0 auto;text-align:left;'>
+  <h2>Sign in</h2>
+  
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <table align='left' style='margin:0;float:none;'>
+    <tr>
+      <td><%= f.label :username %></td>
+      <td><%= f.text_field :username %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :password %></td>
+      <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td colspan='2'>
+        <% if devise_mapping.rememberable? -%>
+          <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+        <% end -%>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.submit "Sign in" %></td>
+    </tr>
+  </table>
+  <% end %>
+  
+  <%= render :partial => "devise/shared/links" %>
+</div>
+<% content_for :bannerimg do %>
+  <img height="258" src="/images/bannerimg_teacher.png" width="1000" />
+<% end %>

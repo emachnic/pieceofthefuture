@@ -1,0 +1,18 @@
+- title "Piece of the Future => Edit #{@classroom.class_name}"
+#page
+  .box_t1
+    .box_t2
+      .box_t3
+  .box_1
+    .box_2
+      .box_3{ :style => "min-height: 30em;" }
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
+        %h1 Editing classroom
+        = render 'form'
+        = link_to 'Show', @classroom
+        |
+        \#{link_to 'Back', classrooms_path}
+  .box_b1
+    .box_b2
+      .box_b3

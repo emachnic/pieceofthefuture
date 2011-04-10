@@ -1,0 +1,92 @@
+= form_for(@institution) do |f|
+  = f.error_messages
+  %table
+    %tr
+      %td.label
+        = f.label :name, 'Institution Name:'
+        %span.required *
+      %td
+        = f.text_field :name
+        .form_input_notes Please enter name of educational institution
+    %tr
+      %td.label
+        = f.label :school_site, 'Institution Web Address:'
+        http://
+      %td
+        = f.text_field :school_site
+    %tr
+      %td.label
+        = f.label :contact_name, 'Contact Name:'
+        %span.required *
+      %td
+        = f.text_field :contact_name
+        .form_input_notes Please enter name of school contact
+    %tr
+      %td.label
+        = f.label :contact_email, 'Contact Email:'
+        %span.required *
+      %td
+        = f.email_field :contact_email
+        .form_input_notes Please enter email for school contact
+    %tr
+      %td.label
+        = f.label :contact_email_confirmation, 'Confirm Email:'
+        %span.required *
+      %td
+        = f.email_field :contact_email_confirmation
+        .form_input_notes Please confirm email
+    %tr
+      %td.label
+        = f.label :contact_title, 'Contact Title:'
+      %td
+        = f.text_field :contact_title
+        .form_input_notes Please enter title of school contact
+    %tr
+      %td.label
+        = f.label :street_one, 'Address 1:'
+        %span.required *
+      %td
+        = f.text_field :street_one
+        .form_input_notes Please enter street address for school
+    %tr
+      %td.label
+        = f.label :street_two, 'Address 2:'
+      %td
+        = f.text_field :street_two
+    %tr
+      %td.label
+        = f.label :city, 'City:'
+        %span.required *
+      %td
+        = f.text_field :city
+        .form_input_notes Please enter school's city
+    %tr
+      %td.label
+        = f.label :state, 'State:'
+        %span.required *
+      %td
+        = f.select :state, @states
+    %tr
+      %td.label
+        = f.label :postal_code, 'Zip Code:'
+        %span.required *
+      %td
+        = f.text_field :postal_code
+        .form_input_notes Please enter zip code of school
+    %tr
+      %td.label
+        = f.label :phone, 'Phone Number:'
+        %span.required *
+      %td
+        = f.text_field :phone
+        .form_input_notes Please enter contact phone number
+    %tr
+      %td.label{:style => 'vertical-align:top;'}
+        = f.label :wish_list, 'Wish List:'
+      %td
+        = f.text_area :wish_list
+    %tr
+      %td &nbsp;
+      %td
+        = f.submit :class => "styled_button blue"
+        = link_to 'Back', institutions_path, :class => 'grey styled_button'

@@ -1,0 +1,29 @@
+#footerarea
+  %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "1000"}
+    %tr
+      %td{:align => "left", :valign => "bottom", :width => "707"}
+        #footer_left
+          = link_to image_tag('composedpixels.png', :alt => 'ComposedPixels', :id => 'composedpixels'), 'http://composedpixels.com'
+          = link_to image_tag('evanmachnic.png', :alt => 'Evan Machnic', :id => 'evanmachnic'), 'http://broadmac.net'
+      %td{:align => "right", :valign => "bottom", :width => "293"}
+        %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "261"}
+          %tr
+            %td{:align => "left", :colspan => "5", :valign => "top"}
+              %img{:alt => "", :height => "22", :src => "/images/footer_followus.png", :width => "261"}/
+          %tr
+            %td{:align => "left", :valign => "top", :width => "98"}
+              %img{:alt => "", :height => "29", :src => "/images/footer_followarrow.png", :width => "98"}/
+            %td{:align => "left", :valign => "top", :width => "49"}
+              %a#footer_facebook{:href => "http://www.facebook.com/pages/Tomorrows-Future-Foundation/127003594039657?sk=wall", :target => "_blank"}
+            %td{:align => "left", :valign => "top", :width => "49"}
+              %a#footer_twitter{:href => "http://twitter.com/tffoundation", :target => "_blank"}
+            %td{:align => "left", :valign => "top", :width => "49"}
+              %a#footer_myspace{:href => "http://www.myspace.com/tomorrowsfuturefoundation", :target => "_blank"}
+            %td{:align => "left", :valign => "top", :width => "16"}
+              %a{:href => "http://www.myspace.com/tomorrowsfuturefoundation", :onmouseout => "MM_swapImgRestore()", :onmouseover => "MM_swapImage('footer_myspace','','/images/footer_myspace_on.png',1)", :target => "_blank"}
+                %img{:alt => "", :border => "0", :height => "29", :src => "/images/footer_09.png", :width => "16"}/
+          %tr
+            %td{:align => "left", :colspan => "5", :valign => "top"} &nbsp;
+#footer_copyright
+  %a{:href => 'http://www.tomorrowsfuturefoundation.org'}
+    %img{:alt => "", :height => "34", :src => "/images/footer_copyright.png", :width => "261"}/

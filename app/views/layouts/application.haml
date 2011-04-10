@@ -1,0 +1,40 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xmlns:og" => "http://opengraphprotocol.org/schema/", "xmlns:fb" => "http://www.facebook.com/2008/fbml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title= yield(:title) || "Piece of the Future"
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    /%meta{ :name => 'viewport', :content => 'width=device-width, initial-scale=1.0' }
+    %meta{:property => "og:title", :content => 'I bought a Piece of the Future'}/
+    %meta{:property => "og:url", :content => "http://pieceofthefuture.org"}
+    %meta{:property => "og:image", :content => "http://pieceofthefuture.org/images/header_logo.png"}
+    %meta{:property => "og:description", :content => "Please join Tomorrow's Future Foundation in a show of Support for Education. As we raise awareness and funds for our children in an effort to establish a better tomorrow."}
+    = stylesheet_link_tag 'application', :cache => true
+    /[if lt IE 9]
+      = javascript_include_tag 'http://html5shiv.googlecode.com/svn/trunk/html5.js'
+    = javascript_include_tag "http://connect.facebook.net/en_US/all.js#xfbml=1"
+    = csrf_meta_tag
+    = yield(:head)
+  %body
+    = render 'layouts/top_bar'
+    = render 'layouts/header'
+    = render 'layouts/menu_items'
+    #contentwrapper
+      .content_full
+        .box_t1
+          .box_t2
+            .box_t3
+        .box_1
+          .box_2
+            .box_3
+              = yield 
+        .box_b1
+          .box_b2
+            .box_b3
+      .clear
+    #bannerimg
+      = yield(:bannerimg)
+    = render 'layouts/footer'
+    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+    = javascript_include_tag 'rails', 'application', :cache => true
+    = yield(:bottom_scripts)

@@ -1,0 +1,30 @@
+- title "Piece of the Future => Educational Institutions"
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:align => "left", :style => "background: url('/images/thecontent_quotebg_lightpurp.png') no-repeat; height: 155px;", :valign => "top"}
+      %img{:height => "155", :src => "/images/thecontent_quote_04.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"} &nbsp;
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %img{:height => "64", :src => "/images/thecontent_title_classrooms.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "890"}
+        %tr
+          %td{:align => "left", :style => "padding-left: 10px;", :valign => "top", :width => "610"}
+            = form_tag institutions_path, :method => 'get' do 
+              %p 
+                Search Institutions:
+                = text_field_tag :search, params[:search] 
+                = submit_tag "Search", :name => nil
+            #institutions= render 'institutions'
+            = will_paginate @institutions, :param_name => :institutions_page
+            %br
+            %br
+            = link_to 'Create Institution', new_institution_path, :class => 'blue styled_button', :style => 'color:#fff;'
+            = link_to 'Create Classroom', new_classroom_path, :class => 'blue styled_button', :style => 'color:#fff;'
+          %td{:align => "right", :valign => "top", :width => "280", :style => 'padding-top:30px;'}
+            %img{:height => "400", :src => "/images/sidebanners_classrooms.png", :width => "270"}/
+- content_for :bannerimg do
+  %img{:height => "258", :src => "/images/bannerimg_kids.png", :width => "1000"}/

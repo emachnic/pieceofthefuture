@@ -1,0 +1,74 @@
+- title 'Piece of the Future => Buy-A-Box'
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:align => "left", :style => "background: url('/images/thecontent_quotebg_green.png') no-repeat; height: 155px;", :valign => "top"}
+      %img{:height => "155", :src => "/images/thecontent_quote_02.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"} &nbsp;
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %img{:height => "64", :src => "/images/thecontent_subtitle_thankyou.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"}
+      .success Please print this page for your records
+      #receipt
+        %table.plain{:width => '600px', :style => 'margin:0 auto;font-size:16px;'}
+          %caption Donation Information
+          %tbody
+            %tr
+              %th Transaction Number
+              %td= @donation.params["transaction_id"]
+            %tr
+              %th Transaction Timestamp
+              %td= @donation.params["timestamp"]
+            %tr
+              %th Donor Name
+              %td
+                = @donation.first_name
+                = @donation.last_name
+            %tr
+              %th Email Address
+              %td= @donation.email
+            %tr
+              %th Advertisement Website
+              %td= @donation.ad_website
+            - unless @donation.institution.nil?
+              %tr
+                %th Chosen School
+                %td= link_to @donation.institution.name, @donation.institution
+            - unless @donation.classroom.nil?
+              %tr
+                %th Chosen Classroom
+                %td= link_to @donation.classroom.class_name
+            - unless @donation.custom_institution_name.nil? || @donation.custom_institution_name == ""
+              %tr
+                %th Custom School
+                %td= @donation.custom_institution_name
+            - unless @donation.custom_classroom_name.nil? || @donation.custom_classroom_name == ""
+              %tr
+                %th Custom Classroom
+                %td= @donation.custom_classroom_name
+            - unless @donation.custom_classroom_teacher.nil? || @donation.custom_classroom_teacher == ""
+              %tr
+                %th Custom Classroom Teacher
+                %td= @donation.custom_classroom_teacher
+            - unless @donation.custom_classroom_school.nil? || @donation.custom_classroom_school == ""
+              %tr
+                %th Custom Classroom School
+                %td= @donation.custom_classroom_school
+            %tr
+              %th Number of Boxes Purchased
+              %td= @donation.box_quantity
+            %tr
+              %th Dollar Amount Donated
+              %td
+                &#36;
+                = @donation.params["amount"]
+      #social_buttons
+        #twitter
+          %a{:href => "http://twitter.com/share", :class => "twitter-share-button", "data-url" => "http://pieceofthefuture.org", "data-text" => "I just bought a Piece of the Future! You should too.", "data-count" => "vertical", "data-via" => "tffoundation"}Tweet
+          %script{:type => "text/javascript", :src => "http://platform.twitter.com/widgets.js"}
+        %fb:like{:href => "http://pieceofthefuture.org", :layout => "box_count", :show_faces => "false", :font => "arial"}
+.clear
+- content_for :bannerimg do
+  %img{:height => "258", :src => "/images/bannerimg_puzzle.png", :width => "1000"}/

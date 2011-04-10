@@ -1,0 +1,82 @@
+- title 'Piece of the Future => Buy-A-Box'
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:align => "left", :style => "background: url('/images/thecontent_quotebg_green.png') no-repeat; height: 155px;", :valign => "top"}
+      %img{:height => "155", :src => "/images/thecontent_quote_02.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"} &nbsp;
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %img{:height => "64", :src => "/images/thecontent_subtitle_form.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"}
+      - if notice
+        .success= notice
+      = form_for @contact_form, :url => { :controller => 'donate', :action => 'send_email'}, :html => { :multipart => true } do |f|
+        = f.error_messages
+        %table
+          %tr
+            %td.label
+              = f.label :name, 'Name:'
+              %span.required *
+            %td
+              = f.text_field :name, :value => "#{@donation.first_name} #{@donation.last_name}"
+          %tr
+            %td.label
+              = f.label :email, "Email:"
+            %td
+              = f.email_field :email, :value => "#{@donation.email}"
+              %br
+              %span
+                (optional)
+              .form_input_notes Email will be displayed on home page
+          %tr
+            %td.label
+              = f.label :ad_url, 'Ad Web Address:'
+              http://
+            %td
+              = f.text_field :ad_url, :value => "#{@donation.ad_website}"
+              %br
+              %span
+                (optional)
+              .form_input_notes URL to link to from your ad
+          %tr
+            %td.label
+              = f.label :graph_image, 'Small Image for collage:'
+              %span.required *
+            %td
+              = f.file_field :graph_image
+              .form_input_notes Small image for homepage
+          %tr
+            %td.label
+              = f.label :ad_image, 'Large Advertisment Image:'
+            %td
+              = f.file_field :ad_image
+              %br
+              %span
+                (if different from collage)
+              .form_input_notes Large advertisement for popup
+          %tr
+            %td.label
+              %strong *NOTE:
+            %td
+              Images will be cropped/resized to 300x200 for landscape or 200x300 for portrait.
+              %br
+              Please upload highest resolution possible
+              %br
+              Larger images will take longer. Please do not press browser's 'Back' button.
+          %tr
+            %td &nbsp;
+            %td
+              = f.hidden_field :confirmation, :value => "#{@donation.params["transaction_id"]}"
+              = f.hidden_field :donation_id, :value => @donation.id
+              = f.hidden_field :school, :value => @donation.institution.name if @donation.institution
+              = f.hidden_field :school, :value => @donation.custom_institution_name if @donation.custom_institution_name
+              = f.hidden_field :classroom, :value => @donation.classroom.class_name if @donation.classroom
+              = f.hidden_field :custom_classroom_name, :value => @donation.custom_classroom_name if @donation.custom_classroom_name
+              = f.hidden_field :custom_classroom_teacher, :value => @donation.custom_classroom_teacher if @donation.custom_classroom_teacher
+              = f.hidden_field :custom_classroom_school, :value => @donation.custom_classroom_school if @donation.custom_classroom_school
+              = f.submit 'Complete Submission', :class => "styled_button blue", :style => 'color:white;'
+.clear
+- content_for :bannerimg do
+  %img{:height => "258", :src => "/images/bannerimg_puzzle.png", :width => "1000"}/

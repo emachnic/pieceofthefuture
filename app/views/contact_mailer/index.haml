@@ -1,0 +1,54 @@
+- title 'Piece of the Future => Contact Us'
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:align => "left", :style => "background: url('/images/thecontent_quotebg_magenta.png') no-repeat; height: 155px;", :valign => "top"}
+      %img{:height => "155", :src => "/images/thecontent_quote_07.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"} &nbsp;
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %img{:height => "64", :src => "/images/thecontent_title_contactus.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "890"}
+        %tr
+          %td{:align => "left", :style => "padding-left: 20px;", :valign => "top", :width => "610"}
+            = form_for @contact_mailer, :url => { :action => 'send_email'}, :html => { :multipart => true } do |f|
+              = f.error_messages
+              %table{:style => 'margin:0;'}
+                %tr
+                  %td.label
+                    = f.label :name, 'Name:'
+                  %td
+                    = f.text_field :name, :value => "#{params[:name]}"
+                    .form_input_notes Please enter full name
+                %tr
+                  %td.label
+                    = f.label :email, 'Email:'
+                  %td
+                    = f.email_field :email, :value => "#{params[:email]}"
+                    .form_input_notes Valid email address required
+                %tr
+                  %td.label
+                    = f.label :support_type, 'Support Type:'
+                  %td
+                    = f.select :support_type, options_for_select(['General Support', 'Questions or Concerns', 'Image Change'])
+                    .form_input_notes Select type of support
+                %tr
+                  %td.label{:style => 'vertical-align:top;'}
+                    = f.label :message, 'Message:'
+                  %td
+                    = f.text_area :message
+                %tr
+                  %td.label
+                    = f.label :screenshot, 'Image:'
+                  %td
+                    = f.file_field :screenshot
+                %tr
+                  %td &nbsp;
+                  %td
+                    = f.submit 'Send Email', :class => "blue styled_button"
+          %td{:align => "right", :valign => "top", :width => "280"}
+            %img{:height => "400", :src => "/images/sidebanners_contact.png", :width => "270"}/
+- content_for :bannerimg do
+  %img{:height => "258", :src => "/images/bannerimg_teacher2.png", :width => "1000"}/

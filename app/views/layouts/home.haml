@@ -1,0 +1,39 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title= yield(:title) || "Piece of the Future"
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    %meta{:property => "og:title", :content => 'I bought a Piece of the Future'}
+    %meta{:property => "og:url", :content => "http://pieceofthefuture.org"}
+    %meta{:property => "og:image", :content => "http://pieceofthefuture.org/images/header_logo.png"}
+    %meta{:property => "og:description", :content => "Please join Tomorrow's Future Foundation in a show of Support for Education. As we raise awareness and funds for our children in an effort to establish a better tomorrow."}
+    /%meta{ :name => 'viewport', :content => 'width=1024, initial-scale=1.0' }
+    = stylesheet_link_tag 'application', :cache => true
+    /[if lt IE 9]
+      = javascript_include_tag 'http://html5shiv.googlecode.com/svn/trunk/html5.js'
+    = csrf_meta_tag
+    = yield(:head)
+  %body
+    = render 'layouts/top_bar'
+    = render 'layouts/header'
+    .chalk_t1.clear
+      .chalk_t2
+        .chalk_t3
+    .chalk_1
+      .chalk_2
+        .chalk_3
+          = render 'layouts/menu_items'
+          #pixelwrapper
+            = yield
+    .chalk_b1
+      .chalk_b2
+        .chalk_b3
+    #bannerimg
+      = yield(:bannerimg)
+    = render 'layouts/footer'
+    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+    = javascript_include_tag 'http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js'
+    = javascript_include_tag 'tooltip', :cache => 'tooltip'
+    #preload
+      = image_tag 'boxes/box_ads.png'

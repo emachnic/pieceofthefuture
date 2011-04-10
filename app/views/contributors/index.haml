@@ -1,0 +1,87 @@
+- title "Piece of the Future => Contributors"
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:align => "left", :style => "background: url('/images/thecontent_quotebg_blue.png') no-repeat; height: 155px;", :valign => "top"}
+      %img{:height => "155", :src => "/images/thecontent_quote_05.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"} &nbsp;
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %img{:height => "64", :src => "/images/thecontent_title_contributors.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "890", :style => 'font-size:12px;'}
+        %tr
+          %td{:align => "left", :valign => "top", :style => 'font-size:12px;line-height:0;'}
+            %h1{:style => 'text-indent:15px;'} Listing Contributors
+            %table.datalist{:width => '860px'}
+              %thead
+                %tr
+                  %th{:scope => 'col'} Name
+                  %th{:scope => 'col'} Number of Boxes
+                  %th{:scope => 'col'} Amount Donated
+                  %th{:scope => 'col'} Chosen School or Classroom
+              %tbody
+                - @donations.each do |donation|
+                  %tr
+                    %td= "#{donation.first_name} #{donation.last_name}"
+                    %td= donation.box_quantity
+                    %td= donation.params["amount"] if donation.params
+                    %td
+                      - if donation.classroom
+                        = donation.classroom.class_name
+                      - elsif donation.institution
+                        = donation.institution.name
+                      - elsif donation.custom_institution_name
+                        = donation.custom_institution_name
+                      - elsif donation.custom_classroom_name
+                        = donation.custom_classroom_name
+            = will_paginate @donations
+            %br
+            %br
+            %p
+              %br
+              %img{:height => "37", :src => "/images/thecontent_contribution_what.png", :width => "431"}/
+              %br/
+              Your generosity provides the funds to acquire those wish list                    items, increasing the success rates of our youths.
+            %blockquote{:style => 'padding-left:30px;'}
+              %p » $20 Supplies 145students with paper, pencils, and erasers.
+              %p
+                » $25Buys a School-Psk which includes:
+                %br/
+                %br/
+                1 box crayons(24ct), erasers, 2pocketed folders, 140z glue, ruler, scissors,
+                %br/
+                1                      set washable markers, 4 - 70pg notebooks, pencils, 1set colored                      pencils, paper and pencils.
+              %p » $50 will help purchases a printer/scanner for a classroom, library, or                      computer lab.
+              %p » $100 can sponsor 4 different classrooms with School-Pak's. Or could                      purchase a classroom set of cd players w/ books on cd for reading and                      listening centers.
+              %p » $250 will help provide a computer for the media center or individual                      classroom along with appropriate software.
+              %p » $500 will help purchase interactive touch screen technology.
+            %p
+              %img{:height => "37", :src => "/images/thecontent_contribution_why.png", :width => "431"}/
+              %br/
+              No one can deny that the public school systems in Florida are in dire                      financial straits because of the budgetary cuts. Counties throughout Florida are continuously being asked to tighten their belts. That equates to a decrease in funding of $1000 per student next year, and a sharp decrease in necessary supplies for schools, teachers, and ultimately the students.
+            %p Funding is important to the success of the public school system,                      academic achievement, and the retention of quality educators. Educators are the driving force of the school system and are constantly being asked to do more with less.
+            %blockquote{:style => 'padding-left:30px;'}
+              %p » Your donation provides a school with materials, teachers with                      resources. and students with the opportunity to succeed.
+              %p » It promotes your company, as a business with an investment in                      the future and lasting ties to the community.
+              %p
+                » Your generosity creates a better educated community. which                      translates into smarter employees and consumers.
+                %br/
+            %span{:style => "text-align: center"}/
+            %h2
+              Tomorrow's Future Foundation would love to assist you in
+              %br/
+              marketing your company to a broader audience and                    demographic.
+            %blockquote{:style => 'padding-left:30px;text-align:left;'}
+              %p »	Create a positive image for your company by investing in                      Education.
+              %p »	Link your website with ours, allowing a greater spectrum of                      people to recognize your business/ company.
+              %p
+                »	Allow us to place your company name and logo on everyday                      school supplies.
+                %br/
+        %tr
+          %td{:align => "left", :valign => "top"}
+- content_for :bannerimg do
+  %img{:height => "258", :src => "/images/bannerimg_chalk.png", :width => "1000"}/
+/\#{link_to 'Destroy', donation, :confirm => 'Are you sure?', :method => :delete}
+/ link_to 'New Donation', new_donation_path

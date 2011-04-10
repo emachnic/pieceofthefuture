@@ -1,0 +1,15 @@
+development:
+  login: 'emachn_1275795127_biz_api1.gmail.com'
+  password: '1275795135'
+  signature: 'AWnozWU4RUuMu-5tLF2MyAtXTWLBAYwZth34NLtyIn5uAk-6gAtsa7BG'
+production:
+  login: 'emachn_1275795127_biz_api1.gmail.com'
+  password: '1275795135'
+  signature: 'AWnozWU4RUuMu-5tLF2MyAtXTWLBAYwZth34NLtyIn5uAk-6gAtsa7BG'
+  # login: 'tomorrowsfuturefoundation_api1.yahoo.com'
+  # password: 'MKVP34SN6NYVE2WE'
+  # signature: 'A9s7ak7BataQvq0cYIzdkPeyAq7mAxwWHrSgpnWZbXyYp3FAsvjPgyis'
+test:
+  login: 'emachn_1275795127_biz_api1.gmail.com'
+  password: '1275795135'
+  signature: 'AWnozWU4RUuMu-5tLF2MyAtXTWLBAYwZth34NLtyIn5uAk-6gAtsa7BG'

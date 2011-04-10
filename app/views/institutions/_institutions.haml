@@ -1,0 +1,21 @@
+%table.plain{:width => '100%'}
+  %thead
+    %tr
+      %th{ :scope => 'col' } Name (click to see classrooms)
+      %th
+  %tbody
+    - unless @institutions.nil?
+      - @institutions.each do |institution|
+        %tr{:style => 'vertical-align:text-top;'}
+          %td.institution_name
+            = link_to "#{institution.name}", 'javascript:void();'
+            - institution.classrooms.each do |classroom|
+              %ul.classrooms
+                %li
+                  &#187;
+                  = link_to "#{classroom.teacher} - #{classroom.class_name}", classroom, :title => "View #{classroom.class_name}"
+          %td
+            = link_to image_tag('/images/notjustagrid/icons/icon-view.png', :alt => 'Show School', :title => 'Show School') + ' View Institution', institution
+            /
+              = link_to image_tag('/images/notjustagrid/icons/icon-edit.png', :alt => 'Edit School', :title => 'Edit School'), edit_institution_path(institution)
+              = link_to image_tag('/images/notjustagrid/icons/icon-delete.png', :alt => 'Delete School', :title => 'Delete School'), institution, :confirm => 'Are you sure?', :method => :delete
