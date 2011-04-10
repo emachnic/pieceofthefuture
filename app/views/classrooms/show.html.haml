@@ -10,8 +10,6 @@
       %img{:height => "64", :src => "/images/thecontent_subtitle_newclassroom.png", :width => "890"}/
   %tr
     %td{:align => "left", :valign => "top"}
-      - if notice
-        .success= notice
       %p
         %b Teacher:
         = @classroom.teacher

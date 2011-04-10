@@ -293,7 +293,7 @@ a[href$='.rm'] {
 /* ---------------------------------------------------------------------------- */
 /* error boxes ---------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------- */
-.warning, .error, .success, .question {
+.warning, .error, .notice, .question {
   padding: 15px 15px 15px 70px;
   background-repeat: no-repeat;
   background-position: 10px center;
@@ -320,11 +320,17 @@ a[href$='.rm'] {
   background-color: #f6d4d7;
   color: #660000; }
 
-.success {
+.notice {
   border: 2px solid #459a2a;
   background-image: url(../images/notjustagrid/icons/icon-success-large.png);
   background-color: #e0ffc7;
   color: #2a4f0b; }
+
+.home {
+  display: none;
+  position: absolute;
+  left: 15%;
+  top: 45px; }
 
 .question {
   border: 2px solid #637ec1;
@@ -346,7 +352,7 @@ a[href$='.rm'] {
 .error div {
   border-top: 15px solid #b04242; }
 
-.success div {
+.notice div {
   border-top: 15px solid #459a2a; }
 
 .question div {
@@ -1000,7 +1006,8 @@ dd {
 
 #header {
   width: 1000px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
   #header #kids {
     float: left;
     padding-top: 55px;

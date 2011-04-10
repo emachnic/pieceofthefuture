@@ -10,8 +10,6 @@
       %img{:height => "64", :src => "/images/thecontent_subtitle_newinstitution.png", :width => "890"}/
   %tr
     %td{:align => "left", :valign => "top"}
-      - if notice
-        .success= notice
       %h4= @institution.name
       %p
         %b Contact name:

@@ -1,4 +1,6 @@
 #header{:style => 'margin:0 auto;'}
+  - flash.each do |flash_type, message|
+    = content_tag :div, message, :class => "flash #{flash_type} home"
   #kids{:style => 'float:left;'}
     = image_tag 'header_kids.png', :alt => 'Kids holding puzzle pieces'
   #logo{:style => 'float:right;'}

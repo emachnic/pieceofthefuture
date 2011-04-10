@@ -14,6 +14,12 @@ $(document).ready(function(){
     $(this).closest('td').find('.classrooms').toggle();
   });
 })
+
+$(function() {
+   $('.home').delay(500).fadeIn('normal', function() {
+      $(this).delay(2500).fadeOut();
+   });
+  });
 /*
 $(function(){
   $('.pagescontainer a').live('click', function(){
