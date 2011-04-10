@@ -9,7 +9,7 @@ gem 'high_voltage'
 gem 'heroku'
 gem 'mail_form'
 gem 'decoder', :git => 'git://github.com/emachnic/simple_decoder.git'
-gem 'activemerchant', :git => 'git://github.com/quadule/active_merchant.git'
+gem 'activemerchant', :git => 'git://github.com/vantran/active_merchant.git'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'devise'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'

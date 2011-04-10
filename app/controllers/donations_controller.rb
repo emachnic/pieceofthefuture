@@ -20,7 +20,7 @@ class DonationsController < ApplicationController
     @countries = Decoder::Countries
   end
   
-  def credit
+  def credit    
     @states = Decoder::Countries[:US].states.invert
     @creditcard = ActiveMerchant::Billing::CreditCard.new(credit_card)
     render :action => 'payment' and return unless @creditcard.valid?
@@ -28,7 +28,10 @@ class DonationsController < ApplicationController
     # Multiply BASE_AMOUNT by number of boxes to get BILL_AMOUNT
     @bill_amount = BASE_AMOUNT * params[:box_quantity].to_i
     
-    @response = paypal_gateway.purchase(@bill_amount, @creditcard, purchase_options)
+    @response = paypal_gateway.create_profile(nil, :credit_card => @creditcard,
+      :description => 'Piece of the Future Box', :start_date => Date.today,
+      :period => 'Year', :frequency => 1, :amount => @bill_amount, 
+      :initial_amount => @bill_amount, :auto_bill_outstanding => true)
     
     if @response.success?
       @donation = Donation.create(:response => @response, :first_name => params[:first_name],
@@ -127,8 +130,8 @@ class DonationsController < ApplicationController
   
   protected
   
-    def paypal_gateway(gw = :paypal)
-      ActiveMerchant::Billing::Base.gateway(gw).new(YAML.load_file(File.join(RAILS_ROOT, 'config', 'paypal.yml'))[RAILS_ENV].symbolize_keys)
+    def paypal_gateway
+      ActiveMerchant::Billing::PaypalRecurringGateway.new(YAML.load_file(File.join(RAILS_ROOT, 'config', 'paypal.yml'))[RAILS_ENV].symbolize_keys)
     end
     
     def paypal_error(response)

@@ -1,4 +1,4 @@
-1302472180
+1302477112
 ActionView	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	module ActionView
 Application	/Users/evan/RailsApps/pieceofthefuture/config/application.rb	  class Application 
 ApplicationController	/Users/evan/RailsApps/pieceofthefuture/app/controllers/application_controller.rb	class ApplicationController 
@@ -74,7 +74,7 @@ create	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controll
 create	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def create
 createActiveXHR	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function createActiveXHR()
 createStandardXHR	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function createStandardXHR()
-credit	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def credit
+credit	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def credit    
 credit_card	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	    def credit_card
 dataAttr	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function dataAttr( elem, key, data )
 defaultDisplay	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function defaultDisplay( nodeName )
@@ -148,7 +148,7 @@ new	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controll
 nonBlankInputs	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/rails.js	function nonBlankInputs(form, specifiedSelector)
 payment	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def payment
 paypal_error	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	    def paypal_error(response)
-paypal_gateway	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	    def paypal_gateway(gw = :paypal)
+paypal_gateway	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	    def paypal_gateway
 persisted?	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	        def persisted?() 
 protect_against_forgery?	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	  def protect_against_forgery?
 purchase_options	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	    def purchase_options
