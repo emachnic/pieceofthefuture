@@ -9,7 +9,7 @@
     %meta{:property => "og:image", :content => "http://pieceofthefuture.org/images/header_logo.png"}
     %meta{:property => "og:description", :content => "Please join Tomorrow's Future Foundation in a show of Support for Education. As we raise awareness and funds for our children in an effort to establish a better tomorrow."}
     /%meta{ :name => 'viewport', :content => 'width=1024, initial-scale=1.0' }
-    = stylesheet_link_tag 'application', :cache => true
+    = stylesheet_link_tag 'application'
     /[if lt IE 9]
       = javascript_include_tag 'http://html5shiv.googlecode.com/svn/trunk/html5.js'
     = csrf_meta_tag
@@ -34,6 +34,6 @@
     = render 'layouts/footer'
     = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
     = javascript_include_tag 'http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js'
-    = javascript_include_tag 'tooltip', :cache => 'tooltip'
+    = javascript_include_tag 'tooltip'
     #preload
       = image_tag 'boxes/box_ads.png'
