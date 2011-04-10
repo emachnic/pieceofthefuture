@@ -1,5 +1,6 @@
 Pieceofthefuture::Application.routes.draw do      
   devise_for :users
+  get '/institutions/search' => 'institutions#search'
   resources :institutions
   resources :classrooms
   

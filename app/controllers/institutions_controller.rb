@@ -2,12 +2,18 @@ class InstitutionsController < ApplicationController
   # GET /institutions
   # GET /institutions.xml
   def index    
-    @institutions = Institution.order("name ASC").paginate(:page => params[:institutions_page], :per_page => 30)      
-
+    @institution_search = Institution.search(params[:search])
+    @institutions = @institution_search.order(:name).paginate(:page => params[:institutions_page], :per_page => 30)          
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @institutions }
     end
+  end
+  
+  def search
+    @institution_search = Institution.search(params[:search])
+    @institutions = @institution_search.order(:name).paginate(:page => params[:institutions_page], :per_page => 30)
   end
 
   # GET /institutions/1

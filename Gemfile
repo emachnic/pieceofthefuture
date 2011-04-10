@@ -15,6 +15,7 @@ gem 'devise'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'hoptoad_notifier'
 gem 'dalli'
+gem 'meta_search'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.5'

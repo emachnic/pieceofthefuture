@@ -1,4 +1,4 @@
-1302425471
+1302429573
 ActionView	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	module ActionView
 Application	/Users/evan/RailsApps/pieceofthefuture/config/application.rb	  class Application 
 ApplicationController	/Users/evan/RailsApps/pieceofthefuture/app/controllers/application_controller.rb	class ApplicationController 
@@ -158,6 +158,7 @@ response=	/Users/evan/RailsApps/pieceofthefuture/app/models/donation.rb	  def re
 returnFalse	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function returnFalse()
 returnTrue	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function returnTrue()
 root	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function root( elem, cur )
+search	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def search
 send_email	/Users/evan/RailsApps/pieceofthefuture/app/controllers/contact_mailer_controller.rb	  def send_email
 send_email	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donate_controller.rb	  def send_email
 send_information	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def send_information

@@ -1,0 +1,17 @@
+%table.plain{:width => '100%'}
+  %thead
+    %tr
+      %th Class Name
+      %th{ :scope => 'col' } Teacher
+      %th Institution
+      %th
+  %tbody
+    - unless @classrooms.nil?
+      - @classrooms.each do |classroom|
+        %tr{:style => 'vertical-align:text-top;'}
+          %td= link_to "#{classroom.class_name}", classroom
+          %td= classroom.teacher
+          %td.institution_name
+            = link_to "#{classroom.institution.name}", classroom.institution
+          %td
+            = link_to image_tag('/images/notjustagrid/icons/icon-view.png', :alt => 'Show Classroom', :title => 'Show School') + ' View Classroom', classroom

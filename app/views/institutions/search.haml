@@ -1,4 +1,4 @@
-- title "Piece of the Future => Educational Institutions"
+- title "Piece of the Future => Search Results"
 %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
   %tr
     %td{:align => "left", :style => "background: url('/images/thecontent_quotebg_lightpurp.png') no-repeat; height: 155px;", :valign => "top"}
@@ -13,16 +13,28 @@
       %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "890"}
         %tr
           %td{:align => "left", :style => "padding-left: 10px;", :valign => "top", :width => "610"}          
-            = form_for @institution_search do |f|
+            = form_for @institution_search, :url => {:action => 'search'} do |f|
               %p 
                 Search Institutions:
-                = f.text_field :name_contains
+                = f.text_field :name_or_classrooms_class_name_or_classrooms_teacher_contains
                 /
                   %p
                     Search Classrooms:
                     = f.text_field :classrooms_class_name_contains
                 = f.submit 'Search'
-            #institutions=render 'institutions'             
+            #institutions
+              %table.plain{:width => '100%'}
+                %thead
+                  %tr
+                    %th{ :scope => 'col' } Name (click to see classrooms)
+                    %th
+                %tbody
+                  - unless @institutions.nil?
+                    - @institutions.each do |institution|
+                      %tr{:style => 'vertical-align:text-top;'}
+                        %td.institution_name
+                          - if institution.name.nil?
+                          = link_to "#{institution.name}", 'javascript:void();'
             - unless @institutions.nil?
               = will_paginate @institutions, :param_name => :institutions_page
             %br

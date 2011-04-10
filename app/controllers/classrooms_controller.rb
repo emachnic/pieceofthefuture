@@ -2,7 +2,8 @@ class ClassroomsController < ApplicationController
   # GET /classrooms
   # GET /classrooms.xml
   def index
-    @classrooms = Classroom.all
+    @classroom_search = Classroom.search(params[:search])
+    @classrooms = @classroom_search.order(:class_name).paginate(:page => params[:classrooms_page], :per_page => 30)
 
     respond_to do |format|
       format.html # index.html.erb

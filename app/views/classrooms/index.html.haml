@@ -1,33 +1,30 @@
 - title "Piece of the Future => All Classrooms"
-#page
-  .box_t1
-    .box_t2
-      .box_t3
-  .box_1
-    .box_2
-      .box_3{ :style => "min-height: 30em;" }
-        - flash.each do |name, msg|
-          = content_tag :div, msg, :id => "flash_#{name}"
-        %h1 Listing classrooms
-        - @classrooms.each do |classroom|
-          %dl
-            %dt= classroom.teacher
-            %dd= classroom.class
-            %dd= classroom.school
-            %dd= classroom.address
-            %dd= classroom.city
-            %dd= classroom.state
-            %dd= classroom.zip
-            %dd= classroom.phone
-            %dd= classroom.email
-            %dd= classroom.wish_list
-            %dd= link_to 'Show', classroom
-            /
-              %dd= link_to 'Edit', edit_classroom_path(classroom)
-              %dd= link_to 'Destroy', classroom, :confirm => 'Are you sure?', :method => :delete
-        %br/
-        %p
-          = link_to 'New Classroom', new_classroom_path, :class => 'styled_button blue'
-  .box_b1
-    .box_b2
-      .box_b3
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:align => "left", :style => "background: url('/images/thecontent_quotebg_lightpurp.png') no-repeat; height: 155px;", :valign => "top"}
+      %img{:height => "155", :src => "/images/thecontent_quote_04.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"} &nbsp;
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %img{:height => "64", :src => "/images/thecontent_title_classrooms.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "890"}
+        %tr
+          %td{:align => "left", :style => "padding-left: 10px;", :valign => "top", :width => "610"}          
+            = form_for @classroom_search do |c|
+              Search Classrooms:
+              = c.text_field :class_name_contains
+              = c.submit 'Search'
+            #institutions= render 'classrooms'
+            - unless @classrooms.nil?
+              = will_paginate @classrooms, :param_name => :classrooms_page
+            %br
+            %br
+            = link_to 'Create Institution', new_institution_path, :class => 'blue styled_button', :style => 'color:#fff;'
+            = link_to 'Create Classroom', new_classroom_path, :class => 'blue styled_button', :style => 'color:#fff;'
+          %td{:align => "right", :valign => "top", :width => "280", :style => 'padding-top:30px;'}
+            %img{:height => "400", :src => "/images/sidebanners_classrooms.png", :width => "270"}/
+- content_for :bannerimg do
+  %img{:height => "258", :src => "/images/bannerimg_kids.png", :width => "1000"}/
