@@ -1,74 +1,71 @@
 #top
-  %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
-    %tr
-      %td
-        #insidetop
-          %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "1004", :height => '44px'}
-            %tr
-              %td{:rowspan => "2", :valign => "top", :width => "11"}
-                %img{:height => "44", :src => "/images/top_left.png", :width => "11"}/
-              %td{:rowspan => "2", :style => "background: url('/images/top_mid.png') repeat-x;", :valign => "top", :width => "986"}
-                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :style => "height: 38px;", :width => "100%"}
-                  %tr{:valign => "middle"}
-                    %td{:width => "183"}
-                      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "176"}
-                        %tr
-                          %td{:width => "69"}
-                            %img{:height => "31", :src => "/images/sitemeter_left.png", :width => "74"}/
-                          %td{:align => "center", :style => "background: url('/images/sitemeter_mid.png') repeat-x; font-size: 11px; color: #ccc;", :width => "98"}
-                            %a{:title => "web stats", :href => "http://statcounter.com/", :target => "_blank", :style => 'border:none;'}
-                              %img{:class => "statcounter", :src => "http://c.statcounter.com/6763400/0/dace8399/0/", :alt => "web stats", :style => 'border:none;'}
-                          %td{:width => "16"}
-                            %img{:height => "31", :src => "/images/sitemeter_right.png", :width => "18"}/
-                    %td#top_social{:width => "116"}
-                      %a#topfacebook{:href => "http://www.facebook.com/pages/Tomorrows-Future-Foundation/127003594039657?sk=wall", :target => "_blank", :alt => 'Facebook Link'}
-                      %a#toptwitter{:href => "http://twitter.com/tffoundation", :target => "_blank", :alt => 'Twitter Link'}
-                      %a#topmyspace{:href => "http://www.myspace.com/tomorrowsfuturefoundation", :target => "_blank", :alt => 'MySpace Link'}
-                    %td{:width => "199"}
-                      %span{:style => "font-size: 11px; color: #444; font-weight: bold;"}= Time.now.strftime("%B %d, %Y")
+  #insidetop
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "1004", :height => '44px'}
+      %tr
+        %td{:rowspan => "2", :valign => "top", :width => "11"}
+          %img{:height => "44", :src => "/images/top_left.png", :width => "11"}/
+        %td{:rowspan => "2", :style => "background: url('/images/top_mid.png') repeat-x;", :valign => "top", :width => "986"}
+          %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :style => "height: 38px;", :width => "100%"}
+            %tr{:valign => "middle"}
+              %td{:width => "183"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "176"}
+                  %tr
                     %td{:width => "69"}
-                      %img{:alt => "", :height => "38", :src => "/images/date_spacer.png", :width => "9"}/
-                    %td{:width => "214"}
-                      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "200"}
-                        %tr
-                          %td{:width => "96"}
-                            %img{:height => "31", :src => "/images/reservedboxes_left.png", :width => "96"}/
-                          %td{:align => "center", :style => "background: url('/images/reservedboxes_mid.png') repeat-x; color: #630;vertical-align:top;padding-top:8px;", :width => "86"}
-                            - if Box.first
-                              = 200000 - Box.first.quantity
-                          %td{:width => "18"}
-                            %img{:height => "31", :src => "/images/reservedboxes_right.png", :width => "18"}/
-                    %td{:width => "200"}
-                      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "200"}
-                        %tr
-                          %td{:width => "96"}
-                            %img{:alt => "", :height => "31", :src => "/images/availboxes_left.png", :width => "96"}/
-                          %td{:align => "center", :style => "background: url('/images/availboxes_mid.png') repeat-x; color: #F9D632;vertical-align:top;padding-top:8px;", :width => "86"}
-                            - if Box.first
-                              = Box.first.quantity
-                          %td{:width => "18"}
-                            %img{:alt => "", :height => "31", :src => "/images/availboxes_right.png", :width => "18"}/
-            %tr
-              %td{:valign => "top", :width => "10"}
-                %img{:height => "44", :src => "/images/top_right.png", :width => "12"}/
-/
-  #top_grey_full
+                      %img{:height => "31", :src => "/images/sitemeter_left.png", :width => "74"}/
+                    %td{:align => "center", :style => "background: url('/images/sitemeter_mid.png') repeat-x; font-size: 11px; color: #ccc;", :width => "98"}
+                      %a{:title => "web stats", :href => "http://statcounter.com/", :target => "_blank", :style => 'border:none;'}
+                        %img{:class => "statcounter", :src => "http://c.statcounter.com/6763400/0/dace8399/0/", :alt => "web stats", :style => 'border:none;'}
+                    %td{:width => "16"}
+                      %img{:height => "31", :src => "/images/sitemeter_right.png", :width => "18"}/
+              %td#top_social{:width => "116"}
+                %a#topfacebook{:href => "http://www.facebook.com/pages/Tomorrows-Future-Foundation/127003594039657?sk=wall", :target => "_blank", :alt => 'Facebook Link'}
+                %a#toptwitter{:href => "http://twitter.com/tffoundation", :target => "_blank", :alt => 'Twitter Link'}
+                %a#topmyspace{:href => "http://www.myspace.com/tomorrowsfuturefoundation", :target => "_blank", :alt => 'MySpace Link'}
+              %td{:width => "199"}
+                %span{:style => "font-size: 11px; color: #444; font-weight: bold;"}= Time.now.strftime("%B %d, %Y")
+              %td{:width => "69"}
+                %img{:alt => "", :height => "38", :src => "/images/date_spacer.png", :width => "9"}/
+              %td{:width => "214"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "200"}
+                  %tr
+                    %td{:width => "96"}
+                      %img{:height => "31", :src => "/images/reservedboxes_left.png", :width => "96"}/
+                    %td{:align => "center", :style => "background: url('/images/reservedboxes_mid.png') repeat-x; color: #630;vertical-align:top;padding-top:8px;", :width => "86"}
+                      - if Box.first
+                        = 200000 - Box.first.quantity
+                    %td{:width => "18"}
+                      %img{:height => "31", :src => "/images/reservedboxes_right.png", :width => "18"}/
+              %td{:width => "200"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "200"}
+                  %tr
+                    %td{:width => "96"}
+                      %img{:alt => "", :height => "31", :src => "/images/availboxes_left.png", :width => "96"}/
+                    %td{:align => "center", :style => "background: url('/images/availboxes_mid.png') repeat-x; color: #F9D632;vertical-align:top;padding-top:8px;", :width => "86"}
+                      - if Box.first
+                        = Box.first.quantity
+                    %td{:width => "18"}
+                      %img{:alt => "", :height => "31", :src => "/images/availboxes_right.png", :width => "18"}/
+      %tr
+        %td{:valign => "top", :width => "10"}
+          %img{:height => "44", :src => "/images/top_right.png", :width => "12"}/
+  /
+    #top_grey_full
     #top_wrap
-      #insidetop
-        %table
-          %tr
-            %td
-              %span.menusubtitle
-                = Time.now.strftime("%B %d, %Y")
-            %td
-              %span Reserved Boxes:
-              - if Box.first
-                = 200000 - Box.first.quantity
-            %td
-              %span Available Boxes:
-              - if Box.first
-                = Box.first.quantity
-            %td
-              %div{:style => 'font-weight:bold;float:left;padding:1px 0 0 10px;margin-right:-8px;'} Page Views:
-              %a{:title => "web stats", :href => "http://statcounter.com/", :target => "_blank", :style => 'border:none;'}
-                %img{:class => "statcounter", :src => "http://c.statcounter.com/6763400/0/dace8399/0/", :alt => "web stats", :style => 'border:none;'}
+    #insidetop
+    %table
+      %tr
+        %td
+          %span.menusubtitle
+            = Time.now.strftime("%B %d, %Y")
+        %td
+          %span Reserved Boxes:
+          - if Box.first
+            = 200000 - Box.first.quantity
+        %td
+          %span Available Boxes:
+          - if Box.first
+            = Box.first.quantity
+        %td
+          %div{:style => 'font-weight:bold;float:left;padding:1px 0 0 10px;margin-right:-8px;'} Page Views:
+          %a{:title => "web stats", :href => "http://statcounter.com/", :target => "_blank", :style => 'border:none;'}
+            %img{:class => "statcounter", :src => "http://c.statcounter.com/6763400/0/dace8399/0/", :alt => "web stats", :style => 'border:none;'}
