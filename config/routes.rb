@@ -9,7 +9,7 @@ Pieceofthefuture::Application.routes.draw do
   match '/donations/payment', :to => 'donations#payment', :as => :donation_payment
   post 'donations/credit'
   resources :donations    
-  post 'donate/send_email'
+  post '/donate/send_email'
   match 'faq' => 'high_voltage/pages#show', :id => 'faq'
   match 'about_tff' => 'high_voltage/pages#show', :id => 'about_tff'
   match 'terms_and_conditions' => 'high_voltage/pages#show', :id => 'terms'
