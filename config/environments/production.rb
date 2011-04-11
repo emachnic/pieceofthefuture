@@ -48,7 +48,7 @@ Pieceofthefuture::Application.configure do
   config.active_support.deprecation = :notify
   
   config.after_initialize do
-    ActiveMerchant::Billing::Base.mode = :test
+    ActiveMerchant::Billing::Base.mode = :production
     #paypal_options = (
       #:login => "tomorrowsfuturefoundation_api1.yahoo.com",
       #:password => "MKVP34SN6NYVE2WE",
