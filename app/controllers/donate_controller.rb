@@ -1,4 +1,5 @@
 class DonateController < ApplicationController
+  ssl_allowed :send_email
   def send_email
     @contact_form = ContactForm.new(params[:contact_form])
     @contact_form.request = request
