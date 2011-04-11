@@ -47,5 +47,5 @@ production:
   encoding: unicode
   database: pieceofthefuture_production
   pool: 5
-  username:
-  password:
+  username: evan
+  password: payton

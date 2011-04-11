@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-  ssl_required :payment, :credit
+  #ssl_required :payment, :credit
   ssl_allowed :send_information
   # Set BASE_AMOUNT to $5.00
   BASE_AMOUNT = 500
@@ -19,6 +19,10 @@ class DonationsController < ApplicationController
     @creditcard = ActiveMerchant::Billing::CreditCard.new
     @states = Decoder::Countries[:US].states.invert
     @countries = Decoder::Countries
+  end
+  
+  def get_classrooms
+    @classrooms = Classroom.find_by_institution(:all).order(:class_name)
   end
   
   def credit    

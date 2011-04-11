@@ -12,7 +12,7 @@ $(document).ready(function(){
   
   $('td').find('.classrooms').hide().end().find('.institution_name > a').click(function(){
     $(this).closest('td').find('.classrooms').toggle();
-  });
+  });  
 })
 
 $(function() {

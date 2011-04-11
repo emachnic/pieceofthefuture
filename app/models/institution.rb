@@ -30,7 +30,7 @@ class Institution < ActiveRecord::Base
   validates :street_one, :city, :state, :postal_code, :phone, :presence => true
 
   attr_accessible :name, :school_site, :contact_name, :contact_email, :contact_title,
-    :street_one, :street_two, :city, :state, :postal_code, :phone, :wish_list
+    :street_one, :street_two, :city, :state, :postal_code, :phone, :wish_list    
     
     #def self.search(search)  
     #if search  
