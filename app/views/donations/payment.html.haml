@@ -1,5 +1,6 @@
 - title "Piece of the Future => Buy-A-Box"
 - content_for :head do
+  = javascript_include_tag 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/jquery.validate.js'
   :javascript
     function popitup(url) {
     	newwindow=window.open(url,'name','height=300,width=300');
@@ -23,14 +24,14 @@
           Errors encountered with your credit card information:
           %ul
             = @creditcard.errors.full_messages.map {|m| content_tag('li', m)}
-      = form_tag 'credit' do
+      = form_tag 'credit', :id => 'user_info' do
         %table
           %tr
             %td.label
               = label_tag :first_name, 'First Name:'
               %span.required *
             %td
-              = text_field_tag :first_name, ''
+              = text_field_tag :first_name, '', :class => 'required'
           %tr
             %td.label
               = label_tag :last_name, 'Last Name:'

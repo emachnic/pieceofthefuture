@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-  ssl_required :payment, :credit
+  #ssl_required :payment, :credit
   ssl_allowed :send_information
   # Set BASE_AMOUNT to $5.00
   BASE_AMOUNT = 500
