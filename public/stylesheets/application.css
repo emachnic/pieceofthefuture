@@ -1007,18 +1007,18 @@ dd {
 #header {
   width: 1000px;
   margin: 0 auto;
-  padding-top: 55px;
   position: relative; }
   #header #kids {
     float: left;
-    height: 181px; }
+    height: 181px;
+    margin-top: 55px; }
     #header #kids img {
       border: 0;
       height: 181px;
       width: 464px; }
   #header #logo {
     float: right;
-    margin: 0;
+    margin-top: 55px;
     width: 536px; }
     #header #logo #header_logo {
       border: 0;
