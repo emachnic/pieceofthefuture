@@ -1007,11 +1007,11 @@ dd {
 #header {
   width: 1000px;
   margin: 0 auto;
+  padding-top: 55px;
   position: relative; }
   #header #kids {
     float: left;
-    height: 181px;
-    padding-top: 55px; }
+    height: 181px; }
     #header #kids img {
       border: 0;
       height: 181px;
@@ -1019,7 +1019,6 @@ dd {
   #header #logo {
     float: right;
     margin: 0;
-    padding-top: 55px;
     width: 536px; }
     #header #logo #header_logo {
       border: 0;
