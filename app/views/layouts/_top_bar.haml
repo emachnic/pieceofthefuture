@@ -48,24 +48,3 @@
       %tr
         %td{:valign => "top", :width => "10"}
           %img{:height => "44", :src => "/images/top_right.png", :width => "12"}/
-  /
-    #top_grey_full
-    #top_wrap
-    #insidetop
-    %table
-      %tr
-        %td
-          %span.menusubtitle
-            = Time.now.strftime("%B %d, %Y")
-        %td
-          %span Reserved Boxes:
-          - if Box.first
-            = 200000 - Box.first.quantity
-        %td
-          %span Available Boxes:
-          - if Box.first
-            = Box.first.quantity
-        %td
-          %div{:style => 'font-weight:bold;float:left;padding:1px 0 0 10px;margin-right:-8px;'} Page Views:
-          %a{:title => "web stats", :href => "http://statcounter.com/", :target => "_blank", :style => 'border:none;'}
-            %img{:class => "statcounter", :src => "http://c.statcounter.com/6763400/0/dace8399/0/", :alt => "web stats", :style => 'border:none;'}
