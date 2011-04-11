@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(pieceofthefuture\.org)(:80)? [NC]
+RewriteRule ^(.*) http://www.pieceofthefuture.org/$1 [R=301,L]
+order deny,allow
