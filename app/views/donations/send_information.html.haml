@@ -10,8 +10,6 @@
       %img{:height => "64", :src => "/images/thecontent_subtitle_form.png", :width => "890"}/
   %tr
     %td{:align => "left", :valign => "top"}
-      - if notice
-        .success= notice
       = form_for @contact_form, :url => { :controller => 'donate', :action => 'send_email'}, :html => { :multipart => true } do |f|
         = f.error_messages
         %table

@@ -61,8 +61,7 @@
             %tr
               %th Dollar Amount Donated
               %td
-                &#36;
-                = @donation.params["amount"]
+                = number_to_currency(@donation.box_quantity * 5.00)
       #social_buttons
         #twitter
           %a{:href => "http://twitter.com/share", :class => "twitter-share-button", "data-url" => "http://pieceofthefuture.org", "data-text" => "I just bought a Piece of the Future! You should too.", "data-count" => "vertical", "data-via" => "tffoundation"}Tweet

@@ -4,19 +4,17 @@ Pieceofthefuture::Application.routes.draw do
   resources :institutions
   resources :classrooms
   
-  constraints(:subdomain => 'secure') do
-    match '/donations/receipt/:id' => 'donations#receipt'
-    match '/donations/send_information/:id' => 'donations#send_information'
-    match '/donations/payment', :to => 'donations#payment'
-    post 'donations/credit'
-    resources :donations
-  end
+  match '/donations/receipt/:id' => 'donations#receipt', :as => :receipt
+  match '/donations/send_information/:id' => 'donations#send_information', :as => :send_information
+  match '/donations/payment', :to => 'donations#payment', :as => :donation_payment
+  post 'donations/credit'
+  resources :donations    
   post 'donate/send_email'
   match 'faq' => 'high_voltage/pages#show', :id => 'faq'
   match 'about_tff' => 'high_voltage/pages#show', :id => 'about_tff'
   match 'terms_and_conditions' => 'high_voltage/pages#show', :id => 'terms'
   match 'prizes' => 'high_voltage/pages#show', :id => 'prizes'
-  match '/contributors' => 'contributors#index'
+  match 'contributors' => 'contributors#index'
   match 'contact' => 'contact_mailer#index'
   post 'contact_mailer/send_email'
 

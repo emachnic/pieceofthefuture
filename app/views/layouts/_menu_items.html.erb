@@ -1,19 +1,19 @@
 <div id='menu' class='clear'>
   <ul>
-    <li><%= link_to '', 'http://pieceofthefuture.org', :id => 'home', :class => if_active_controller?('home') %></li>
+    <li><%= link_to '', root_url, :id => 'home', :class => if_active_controller?('home') %></li>
     <li class='splitter'><%= image_tag 'tff_navi_splitter.png', :alt => 'Splitter' %></li>
-    <li><%= link_to '', 'http://pieceofthefuture.org/about_tff', :id => 'about', :class => active_if?('about_tff')%></li>
+    <li><%= link_to '', about_tff_path, :id => 'about', :class => active_if?('about_tff')%></li>
     <li class='splitter'><%= image_tag 'tff_navi_splitter.png', :alt => 'Splitter' %></li>
-    <li><%= link_to '', 'http://secure.pieceofthefuture.org/donations', :id => 'buyabox', :class => if_active_controller?('donations') || active_if?('terms') %></li>
+    <li><%= link_to '', donations_path, :id => 'buyabox', :class => if_active_controller?('donations') || active_if?('terms') %></li>
     <li class='splitter'><%= image_tag 'tff_navi_splitter.png', :alt => 'Splitter' %></li>
-    <li><%= link_to '', 'http://pieceofthefuture.org/prizes', :id => 'prizes', :class => active_if?('prizes') %></li>
+    <li><%= link_to '', prizes_path, :id => 'prizes', :class => active_if?('prizes') %></li>
     <li class='splitter'><%= image_tag 'tff_navi_splitter.png', :alt => 'Splitter' %></li>
-    <li><%= link_to '', 'http://pieceofthefuture.org/institutions', :id => 'classrooms', :class => if_active_controller?('institutions') || if_active_controller?('classrooms') %></li>
+    <li><%= link_to '', institutions_path, :id => 'classrooms', :class => if_active_controller?('institutions') || if_active_controller?('classrooms') %></li>
     <li class='splitter'><%= image_tag 'tff_navi_splitter.png', :alt => 'Splitter' %></li>
-    <li><%= link_to '', 'http://pieceofthefuture.org/contributors', :id => 'contributors', :class => if_active_controller?('contributors') %></li>
+    <li><%= link_to '', contributors_path, :id => 'contributors', :class => if_active_controller?('contributors') %></li>
     <li class='splitter'><%= image_tag 'tff_navi_splitter.png', :alt => 'Splitter' %></li>
-    <li><%= link_to '', 'http://pieceofthefuture.org/faq', :id => 'faq', :class => active_if?('faq') %></li>
+    <li><%= link_to '', faq_path, :id => 'faq', :class => active_if?('faq') %></li>
     <li class='splitter'><%= image_tag 'tff_navi_splitter.png', :alt => 'Splitter' %></li>
-    <li><%= link_to '', 'http://pieceofthefuture.org/contact', :id => 'contact_nav', :class => if_active_controller?('contact_mailer') %></li>
+    <li><%= link_to '', contact_path, :id => 'contact_nav', :class => if_active_controller?('contact_mailer') %></li>
   </ul>
 </div>
