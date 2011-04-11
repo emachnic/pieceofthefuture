@@ -16,6 +16,7 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'hoptoad_notifier'
 gem 'dalli'
 gem 'meta_search'
+gem 'rack-rewrite', '~> 1.0.0'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.5'
