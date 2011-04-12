@@ -70,7 +70,7 @@
               = f.hidden_field :donation_id, :value => @donation.id
               = f.hidden_field :school, :value => @donation.institution.name if @donation.institution
               = f.hidden_field :school, :value => @donation.custom_institution_name if @donation.custom_institution_name
-              = f.hidden_field :classroom, :value => @donation.classroom.class_name if @donation.classroom
+              = f.hidden_field :classroom, :value => @donation.classroom.name if @donation.classroom
               = f.hidden_field :custom_classroom_name, :value => @donation.custom_classroom_name if @donation.custom_classroom_name
               = f.hidden_field :custom_classroom_teacher, :value => @donation.custom_classroom_teacher if @donation.custom_classroom_teacher
               = f.hidden_field :custom_classroom_school, :value => @donation.custom_classroom_school if @donation.custom_classroom_school
