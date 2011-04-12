@@ -26,7 +26,7 @@
                   %tr
                     %td= "#{donation.first_name} #{donation.last_name}"
                     %td= donation.box_quantity
-                    %td= donation.params["amount"] if donation.params
+                    %td= number_to_currency(donation.box_quantity * 5.00)
                     %td
                       - if donation.classroom
                         = donation.classroom.teacher_with_class
