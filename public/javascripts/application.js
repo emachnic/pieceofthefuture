@@ -14,10 +14,10 @@ $(document).ready(function(){
     $(this).closest('td').find('.classrooms').toggle();
   });   
   
-  //$("#search input").keyup(function() {
-    //$.get($("#search").attr("action"), $("#search").serialize(), null, "script");
-    //return false;
-    //});
+  $("#search input").keyup(function() {
+    $.get($("#search").attr("action"), $("#search").serialize(), null, "script");
+    return false;
+  });
 })
 
 $(function() {

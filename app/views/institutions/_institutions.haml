@@ -9,7 +9,7 @@
       - @institutions.each do |institution|
         %tr{:style => 'vertical-align:text-top;'}
           %td.institution_name
-            = link_to "#{institution.name}", 'javascript:void();'
+            = link_to "#{institution.name}", 'javascript:void(0);'
             - institution.classrooms.each do |classroom|
               %ul.classrooms
                 %li
