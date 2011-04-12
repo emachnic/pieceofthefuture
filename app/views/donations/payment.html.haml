@@ -67,7 +67,7 @@
             %td.label
               = label_tag :classroom, 'Classroom:'
             %td
-              = grouped_collection_select :classroom, :id, Institution.order("name ASC"), :classrooms, :name, :id, :teacher_with_class, :include_blank => true
+              = grouped_collection_select :classroom, :id, Institution.order("name ASC"), :classroom_ordered, :name, :id, :teacher_with_class, :include_blank => true
               %br
               %span.small
                 = link_to "My Classroom's not listed", "javascript:void(0);", :id => 'custom_classroom_link'

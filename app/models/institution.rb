@@ -39,4 +39,8 @@ class Institution < ActiveRecord::Base
       scoped  
     end  
   end 
+  
+  def classroom_ordered
+    self.classrooms.order(:name)
+  end
 end
