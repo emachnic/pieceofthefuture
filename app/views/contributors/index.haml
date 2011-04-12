@@ -29,7 +29,7 @@
                     %td= donation.params["amount"] if donation.params
                     %td
                       - if donation.classroom
-                        = donation.classroom.class_name
+                        = donation.classroom.teacher_with_class
                       - elsif donation.institution
                         = donation.institution.name
                       - elsif donation.custom_institution_name
