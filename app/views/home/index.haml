@@ -1,5 +1,23 @@
 - title 'Piece of the Future => Home'
 #grid
+  = link_to '', 'http://www.tomorrowsfuturefoundation.org/', :id => 'noelle_bowen_1', :class => 'box_link_left', :target => '_blank'
+  .tooltip.portrait
+    #noelle_bowen_1_img.ad_img
+    %br
+    %span.label Buyer:
+    Noelle Bowen
+    %br
+    %span.label Email:
+    = mail_to 'noelle.bowen@hotmail.com'
+    %br
+    %span.label Classroom:
+    = link_to "Hogan's Heroes", classroom_path(1)
+    %br
+    %span.label Donated:
+    $5.00
+    %br
+    %span.label Website:
+    = link_to 'noellebowen.bodybyvi.com', 'http://noellebowen.bodybyvi.com', :target => '_blank'
   /
     = link_to '', 'http://www.tomorrowsfuturefoundation.org/', :id => 'joshua_hogan_1', :class => 'box_link_left', :target => '_blank'
     .tooltip.portrait
