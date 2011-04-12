@@ -1,3 +1,4 @@
+%h2 Institutions
 %table.plain{:width => '100%'}
   %thead
     %tr
@@ -13,7 +14,7 @@
               %ul.classrooms
                 %li
                   &#187;
-                  = link_to "#{classroom.teacher} - #{classroom.class_name}", classroom, :title => "View #{classroom.class_name}"
+                  = link_to "#{classroom.teacher_with_class}", classroom, :title => "View #{classroom.name}"
           %td
             = link_to image_tag('/images/notjustagrid/icons/icon-view.png', :alt => 'Show School', :title => 'Show School') + ' View Institution', institution
             /

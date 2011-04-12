@@ -16,9 +16,9 @@
           %tr
             %td.label
               = f.label :name, 'Name:'
-              %span.required *
             %td
               = f.text_field :name, :value => "#{@donation.first_name} #{@donation.last_name}"
+              %span.required *
           %tr
             %td.label
               = f.label :email, "Email:"
@@ -41,9 +41,9 @@
           %tr
             %td.label
               = f.label :graph_image, 'Small Image for collage:'
-              %span.required *
             %td
               = f.file_field :graph_image
+              %span.required *
               .form_input_notes Small image for homepage
           %tr
             %td.label

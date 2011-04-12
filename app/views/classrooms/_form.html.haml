@@ -4,45 +4,46 @@
     %tr
       %td.label
         = f.label :teacher, 'Teacher Name:'
-        %span.required *
       %td
         = f.text_field :teacher
+        %span.required *
         .form_input_notes Please enter name of teacher
     %tr
       %td.label
-        = f.label :class_name, 'Class Name:'
-        %span.required *
+        = f.label :name, 'Class Name:'
       %td
-        = f.text_field :class_name
+        = f.text_field :name
+        %span.required *
         .form_input_notes Please enter name of classroom
     %tr
       %td.label
         = f.label :institution, 'Institution:'
       %td
         = f.collection_select :institution_id, @institutions, :id, :name, :prompt => true
+        %span.required *
         .form_input_notes Please enter your school
         %br
         = link_to "My Institution's not listed", new_institution_path
     %tr
       %td.label
         = f.label :phone, 'Phone Number:'
-        %span.required *
       %td
         = f.text_field :phone
+        %span.required *
         .form_input_notes Phone number required
     %tr
       %td.label
         = f.label :email, 'Contact Email:'
-        %span.required *
       %td
         = f.email_field :email
+        %span.required *
         .form_input_notes Valid email address required
     %tr
       %td.label
         = f.label :email_confirmation, 'Confirm Email:'
-        %span.required *
       %td
         = f.email_field :email
+        %span.required *
         .form_input_notes Confirm email
     %tr
       %td.label{:style => 'vertical-align:top;'}

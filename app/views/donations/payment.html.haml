@@ -23,21 +23,23 @@
         .error
           Errors encountered with your credit card information:
           %ul
-            = @creditcard.errors.full_messages.map {|m| content_tag('li', m)}
+            = @creditcard.errors.full_messages.each do |message|
+              %li
+                = message
       = form_tag 'credit', :id => 'user_info' do
         %table
           %tr
             %td.label
               = label_tag :first_name, 'First Name:'
-              %span.required *
             %td
-              = text_field_tag :first_name, '', :class => 'required'
+              = text_field_tag :first_name, params[:first_name]
+              %span.required *
           %tr
             %td.label
               = label_tag :last_name, 'Last Name:'
-              %span.required *
             %td
-              = text_field_tag :last_name, ''
+              = text_field_tag :last_name, params[:last_name]
+              %span.required *
           %tr
             %td &nbsp;
             %td{:style => 'font-size:12px;'}
@@ -56,7 +58,7 @@
                     %td.label
                       = label_tag :custom_institution_name, 'Institution Name:'
                     %td
-                      = text_field_tag :custom_institution_name, ''
+                      = text_field_tag :custom_institution_name, params[:custom_institution_name]
                   %tr
                     %td{:colspan => '2'}
                       %span.small
@@ -75,17 +77,17 @@
                     %td
                       = label_tag :custom_classroom_name, 'Classroom Name:'
                     %td
-                      = text_field_tag :custom_classroom_name, ''
+                      = text_field_tag :custom_classroom_name, params[:custom_classroom_name]
                   %tr
                     %td
                       = label_tag :custom_classroom_teacher, 'Classroom Teacher:'
                     %td
-                      = text_field_tag :custom_classroom_teacher, ''
+                      = text_field_tag :custom_classroom_teacher, params[:custom_classroom_teacher]
                   %tr
                     %td
                       = label_tag :custom_classroom_school, 'Classroom School:'
                     %td
-                      = text_field_tag :custom_classroom_school, ''
+                      = text_field_tag :custom_classroom_school, params[:custom_classroom_school]
                   %tr
                     %td{:colspan => '2'}
                       %span.small
@@ -95,13 +97,13 @@
               = label_tag :ad_website, 'Ad Website:'
               http://
             %td
-              = text_field_tag :ad_website, ''
+              = text_field_tag :ad_website, params[:ad_website]
           %tr
             %td.label
               = label_tag :box_quantity, 'Number of Boxes:'
-              %span.required *
             %td
               = number_field_tag :box_quantity, 1, :size => '10', :min => '1'
+              %span.required *
               x $5.00
           %tr
             %td.label{:style => 'font-size:12px;'}
@@ -111,69 +113,75 @@
           %tr
             %td.label
               = label_tag :address1, 'Address 1:'
-              %span.required *
             %td
-              = text_field_tag :address1, ''
+              = text_field_tag :address1, params[:address1]
+              %span.required *
           %tr
             %td.label
               = label_tag :address2, 'Address 2:'
             %td
-              = text_field_tag :address2, ''
+              = text_field_tag :address2, params[:address2]
           %tr
             %td.label
               = label_tag :city, 'City:'
-              %span.required *
             %td
-              = text_field_tag :city, ''
+              = text_field_tag :city, params[:city]
+              %span.required *
           %tr
             %td.label
               = label_tag :state, 'State:'
-              %span.required *
             %td
               = select_tag :state, options_for_select(@states)
+              %span.required *
           %tr
             %td.label
               = label_tag :zip, 'Zip Code:'
-              %span.required *
             %td
-              = text_field_tag :zip, ''
+              = text_field_tag :zip, params[:zip]
+              %span.required *
           %tr
             %td.label
               = label_tag :phone, 'Phone Number:'
-              %span.required *
             %td
-              = text_field_tag :phone, ''
+              = text_field_tag :phone, params[:phone]
+              %span.required *
           %tr
             %td.label
               = label_tag :email, 'Billing Email:'
-              %span.required *
             %td
-              = email_field_tag :email, ''
+              = email_field_tag :email, params[:email]
+              %span.required *
+          %tr
+            %td.label
+              = label_tag :email_confirmation, 'Email Confirmation:'
+            %td
+              = email_field_tag :email_confirmation, params[:email_confirmation]
+              %span.required *
           %tr
             %td.label
               = label_tag :number, 'Card Number:'
-              %span.required *
             %td
               = text_field_tag :number, ''
+              %span.required *
           %tr
             %td.label
               = label_tag :type, 'Card Type:'
-              %span.required *
             %td
               = select_tag :type, options_for_select([["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]])
+              %span.required *
           %tr
             %td.label
               %label Expiration:
-              %span.required *
             %td
               = select_tag :month, options_for_select(1 .. 12)
               = select_tag :year, options_for_select(Time.now.year .. 10.years.from_now.year)
+              %span.required *
           %tr
             %td.label
               = label_tag :verification_value, 'CVV:'
-              %span.required *
             %td
               = text_field_tag :verification_value, '', :size => 4
+              %span.required *
               %span.small
                 %a{ :href => '/cvv.html', :onclick => "return popitup('/cvv.html')"} Click for information
           %tr

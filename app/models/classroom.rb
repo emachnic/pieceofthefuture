@@ -17,12 +17,20 @@
 class Classroom < ActiveRecord::Base
   belongs_to :institution
   
-  validates :class_name, :presence => true, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => true
   validates :teacher, :phone, :email, :presence => true
   
-  attr_accessible :class_name, :teacher, :phone, :email, :wish_list, :institution_id
+  attr_accessible :name, :teacher, :phone, :email, :wish_list, :institution_id
   
   def teacher_with_class
-    "#{teacher} - #{class_name}"
+    "#{name} - #{teacher}"
   end
+  
+  def self.search(search)  
+    if search  
+      where('name ILIKE ?', "%#{search}%")  
+    else  
+      scoped  
+    end  
+  end 
 end

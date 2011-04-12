@@ -15,7 +15,7 @@
           %td{:align => "left", :style => "padding-left: 10px;", :valign => "top", :width => "610"}          
             = form_for @classroom_search do |c|
               Search Classrooms:
-              = c.text_field :class_name_contains
+              = c.text_field :name_contains
               = c.submit 'Search'
             #institutions= render 'classrooms'
             - unless @classrooms.nil?

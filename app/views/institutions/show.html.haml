@@ -26,7 +26,7 @@
       %p
         %b Wish List:
         = @institution.wish_list
-      \#{link_to 'Back to Institutions', institutions_path, :class => 'blue styled_button'}
-      = link_to 'New Classroom Page', new_classroom_path, :class => 'blue styled_button'
+      \#{link_to 'Back to Institutions', institutions_path, :class => 'blue styled_button', :style => 'color:white;'}
+      = link_to 'New Classroom Page', new_classroom_path, :class => 'blue styled_button', :style => 'color:white;'
 - content_for :bannerimg do
   %img{:height => "258", :src => "/images/bannerimg_kids.png", :width => "1000"}/

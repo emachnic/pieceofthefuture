@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110410053100) do
+ActiveRecord::Schema.define(:version => 20110412011056) do
 
   create_table "boxes", :force => true do |t|
     t.string   "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20110410053100) do
   end
 
   create_table "classrooms", :force => true do |t|
-    t.string   "class_name"
+    t.string   "name"
     t.string   "teacher"
     t.string   "phone"
     t.string   "email"
@@ -30,7 +30,8 @@ ActiveRecord::Schema.define(:version => 20110410053100) do
     t.datetime "updated_at"
   end
 
-  add_index "classrooms", ["class_name"], :name => "index_classrooms_on_class_name", :unique => true
+  add_index "classrooms", ["name"], :name => "index_classrooms_on_class_name", :unique => true
+  add_index "classrooms", ["name"], :name => "index_classrooms_on_name", :unique => true
   add_index "classrooms", ["teacher"], :name => "index_classrooms_on_teacher"
 
   create_table "donations", :force => true do |t|

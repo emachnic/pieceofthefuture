@@ -1,4 +1,4 @@
-1302556498
+1302577289
 ActionView	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	module ActionView
 Application	/Users/evan/RailsApps/pieceofthefuture/config/application.rb	  class Application 
 ApplicationController	/Users/evan/RailsApps/pieceofthefuture/app/controllers/application_controller.rb	class ApplicationController 
@@ -7,6 +7,7 @@ BASE_AMOUNT	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_con
 Base	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/lib/dynamic_form.rb	class ActionView::Base
 Box	/Users/evan/RailsApps/pieceofthefuture/app/models/box.rb	class Box 
 CSRFProtection	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/rails.js	function CSRFProtection(xhr)
+ChangeClassNameToName	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110412011056_change_class_name_to_name.rb	class ChangeClassNameToName 
 ClassMethods	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/ssl_requirement/lib/ssl_requirement.rb	  module ClassMethods
 Classroom	/Users/evan/RailsApps/pieceofthefuture/app/models/classroom.rb	class Classroom 
 ClassroomsController	/Users/evan/RailsApps/pieceofthefuture/app/controllers/classrooms_controller.rb	class ClassroomsController 
@@ -103,6 +104,7 @@ down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410022335_create_box
 down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410031628_create_institutions.rb	  def self.down
 down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410041454_create_classrooms.rb	  def self.down
 down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410053100_create_donations.rb	  def self.down
+down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110412011056_change_class_name_to_name.rb	  def self.down
 edit	/Users/evan/RailsApps/pieceofthefuture/app/controllers/classrooms_controller.rb	  def edit
 edit	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def edit
 edit	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def edit
@@ -141,7 +143,7 @@ index	/Users/evan/RailsApps/pieceofthefuture/app/controllers/contact_mailer_cont
 index	/Users/evan/RailsApps/pieceofthefuture/app/controllers/contributors_controller.rb	  def index
 index	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def index
 index	/Users/evan/RailsApps/pieceofthefuture/app/controllers/home_controller.rb	  def index
-index	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def index    
+index	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def index        
 init	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function init( selector, context )
 input	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	      def input(record_name, method, options = {})
 isDisconnected	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function isDisconnected( node )
@@ -172,6 +174,8 @@ returnFalse	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	
 returnTrue	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function returnTrue()
 root	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function root( elem, cur )
 search	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def search
+search	/Users/evan/RailsApps/pieceofthefuture/app/models/classroom.rb	  def self.search(search)  
+search	/Users/evan/RailsApps/pieceofthefuture/app/models/institution.rb	  def self.search(search)  
 send_email	/Users/evan/RailsApps/pieceofthefuture/app/controllers/contact_mailer_controller.rb	  def send_email
 send_email	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donate_controller.rb	  def send_email
 send_information	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def send_information
@@ -245,6 +249,7 @@ up	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410022335_create_boxes
 up	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410031628_create_institutions.rb	  def self.up
 up	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410041454_create_classrooms.rb	  def self.up
 up	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410053100_create_donations.rb	  def self.up
+up	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110412011056_change_class_name_to_name.rb	  def self.up
 update	/Users/evan/RailsApps/pieceofthefuture/app/controllers/classrooms_controller.rb	  def update
 update	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def update
 update	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def update

@@ -9,7 +9,7 @@
     - unless @classrooms.nil?
       - @classrooms.each do |classroom|
         %tr{:style => 'vertical-align:text-top;'}
-          %td= link_to "#{classroom.class_name}", classroom
+          %td= link_to "#{classroom.name}", classroom
           %td= classroom.teacher
           %td.institution_name
             = link_to "#{classroom.institution.name}", classroom.institution

@@ -1,0 +1,13 @@
+%h2 Classrooms
+%table.plain{:width => '100%'}
+  %thead
+    %tr
+      %th{ :scope => 'col' } Name (click to view classroom)
+      %th Institution
+  %tbody
+    - unless @classrooms.nil?
+      - @classrooms.each do |classroom|
+        %tr{:style => 'vertical-align:text-top;'}
+          %td.classroom_name
+            = link_to "#{classroom.teacher_with_class}", classroom
+          %td= link_to "#{classroom.institution.name}", classroom.institution

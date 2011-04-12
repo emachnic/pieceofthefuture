@@ -4,9 +4,9 @@
     %tr
       %td.label
         = f.label :name, 'Institution Name:'
-        %span.required *
       %td
         = f.text_field :name
+        %span.required *
         .form_input_notes Please enter name of educational institution
     %tr
       %td.label
@@ -17,23 +17,23 @@
     %tr
       %td.label
         = f.label :contact_name, 'Contact Name:'
-        %span.required *
       %td
         = f.text_field :contact_name
+        %span.required *
         .form_input_notes Please enter name of school contact
     %tr
       %td.label
         = f.label :contact_email, 'Contact Email:'
-        %span.required *
       %td
         = f.email_field :contact_email
+        %span.required *
         .form_input_notes Please enter email for school contact
     %tr
       %td.label
         = f.label :contact_email_confirmation, 'Confirm Email:'
-        %span.required *
       %td
         = f.email_field :contact_email_confirmation
+        %span.required *
         .form_input_notes Please confirm email
     %tr
       %td.label
@@ -44,9 +44,9 @@
     %tr
       %td.label
         = f.label :street_one, 'Address 1:'
-        %span.required *
       %td
         = f.text_field :street_one
+        %span.required *
         .form_input_notes Please enter street address for school
     %tr
       %td.label
@@ -56,29 +56,29 @@
     %tr
       %td.label
         = f.label :city, 'City:'
-        %span.required *
       %td
         = f.text_field :city
+        %span.required *
         .form_input_notes Please enter school's city
     %tr
       %td.label
         = f.label :state, 'State:'
-        %span.required *
       %td
         = f.select :state, @states
+        %span.required *
     %tr
       %td.label
         = f.label :postal_code, 'Zip Code:'
-        %span.required *
       %td
         = f.text_field :postal_code
+        %span.required *
         .form_input_notes Please enter zip code of school
     %tr
       %td.label
         = f.label :phone, 'Phone Number:'
-        %span.required *
       %td
         = f.text_field :phone
+        %span.required *
         .form_input_notes Please enter contact phone number
     %tr
       %td.label{:style => 'vertical-align:top;'}
