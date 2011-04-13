@@ -1,10 +1,10 @@
 # == Schema Information
-# Schema version: 20110410041454
+# Schema version: 20110412011056
 #
 # Table name: classrooms
 #
 #  id             :integer         not null, primary key
-#  class_name     :string(255)
+#  name           :string(255)
 #  teacher        :string(255)
 #  phone          :string(255)
 #  email          :string(255)
