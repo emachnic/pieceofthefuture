@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110412011056) do
+ActiveRecord::Schema.define(:version => 20110413154258) do
 
   create_table "boxes", :force => true do |t|
     t.string   "name"
@@ -34,11 +34,19 @@ ActiveRecord::Schema.define(:version => 20110412011056) do
   add_index "classrooms", ["name"], :name => "index_classrooms_on_name", :unique => true
   add_index "classrooms", ["teacher"], :name => "index_classrooms_on_teacher"
 
-  create_table "donations", :force => true do |t|
+  create_table "donation_transactions", :force => true do |t|
+    t.integer  "donation_id"
+    t.string   "action"
+    t.integer  "amount"
     t.boolean  "success"
     t.string   "authorization"
     t.string   "message"
     t.text     "params"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "donations", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "ad_website"
@@ -52,6 +60,9 @@ ActiveRecord::Schema.define(:version => 20110412011056) do
     t.integer  "classroom_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "card_type"
+    t.date     "card_expires_on"
+    t.string   "ip_address"
   end
 
   add_index "donations", ["email"], :name => "index_donations_on_email"

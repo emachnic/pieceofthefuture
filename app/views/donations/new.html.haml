@@ -1,79 +1,21 @@
 - title "Piece of the Future => New Donation"
-#page
-  .box_t1
-    .box_t2
-      .box_t3
-  .box_1
-    .box_2
-      .box_3
-        = form_tag url_for(:controller => 'donations', :action => 'credit', :subdomain => 'secure'), :class => 'vertical_form' do
-          %fieldset{:style => 'width:60%;margin:0 auto;'}
-            %legend Box Information
-            %ul
-              %li
-                = label_tag :first_name, 'First Name:'
-                = text_field_tag :first_name, '', :class => 'requiredfield'
-              %li
-                = label_tag :last_name, 'Last Name:'
-                = text_field_tag :last_name, '', :class => 'requiredfield'
-              %li
-                = label_tag :email, 'Email:'
-                = text_field_tag :email, '', :class => 'requiredfield'
-              %li
-                = label_tag :institution, 'School to Send Prize:'
-                = select_tag :school, options_from_collection_for_select(Institution.all, "id", "name")
-              %li
-                = label_tag :ad_website, 'Advertisement Website:'
-                = url_field_tag :ad_website, '', :class => 'requiredfield'
-              %li
-                = label_tag :box_quantity, 'Number of Boxes: ($5.00 each)'
-                = number_field_tag :box_quantity, 1, :size => '10', :class => 'requiredfield'
-          %fieldset{:style => 'width:60%;margin:10px auto 0 auto;'}
-            %legend Billing Information
-            %ul
-              %li
-                = label_tag :address1, 'Address 1'
-                = text_field_tag :address1, '', :class => 'requiredfield'
-                .form_input_notes Enter billing street address
-              %li
-                = label_tag :address2, 'Address 2'
-                = text_field_tag :address2, '', :class => 'normalfield'
-                .form_input_notes Apt. #, Unit #, etc.
-                %li
-                  = label_tag :city
-                  = text_field_tag :city, '', :class => 'requiredfield'
-                  .form_input_notes Enter billing city
-                %li
-                  = label_tag :state
-                  = select_tag :state, options_for_select(@states)
-                  .form_input_notes Select billing state
-                %li
-                  = label_tag :zip, 'Zip Code'
-                  = text_field_tag :zip, '', :class => 'requiredfield'
-                  .form_input_notes Enter billing zip
-                %li
-                  = label_tag :phone, 'Phone Number'
-                  = text_field_tag :phone, '', :class => 'requiredfield'
-                  .form_input_notes Enter contact phone number
-                %li
-                  %label Card Number
-                  = text_field_tag :number, '', :class => 'requiredfield'
-                  .form_input_notes Enter valid credit card number
-                %li
-                  %label Card Type
-                  = select_tag :type, options_for_select([["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]])
-                  .form_input_notes Select card type
-                %li
-                  %label Expiration
-                  = select_tag :month, options_for_select(1 .. 12)
-                  = select_tag :year, options_for_select(Time.now.year .. 10.years.from_now.year)
-                  .form_input_notes Select card expiration month and year
-                %li
-                  %label CVV
-                  = text_field_tag :verification_value, '', :size => 4, :class => 'requiredfield'
-                  .form_input_notes Enter card verification value (CVV)
-          %fieldset.fieldsetbuttons{:style => 'width:61%;margin-left:auto;margin-right:auto;'}
-            = submit_tag 'Submit', :class => "styled_button blue"
-  .box_b1
-    .box_b2
-      .box_b3
+- content_for :head do
+  = javascript_include_tag 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/jquery.validate.js'
+  :javascript
+    function popitup(url) {
+    	newwindow=window.open(url,'name','height=300,width=300');
+    	if (window.focus) {newwindow.focus()}
+    	return false;
+    }
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td{:align => "left", :style => "background: url('/images/thecontent_quotebg_green.png') no-repeat; height: 155px;", :valign => "top"}
+      %img{:height => "155", :src => "/images/thecontent_quote_02.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"} &nbsp;
+  %tr
+    %td{:align => "left", :valign => "top"}
+      %img{:height => "64", :src => "/images/thecontent_subtitle_form.png", :width => "890"}/
+  %tr
+    %td{:align => "left", :valign => "top"}
+      = render 'form'

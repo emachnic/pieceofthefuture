@@ -66,7 +66,7 @@
           %tr
             %td &nbsp;
             %td
-              = f.hidden_field :confirmation, :value => "#{@donation.params["transaction_id"]}"
+              = f.hidden_field :confirmation, :value => "#{@donation.transactions.last.params["transaction_id"]}"
               = f.hidden_field :donation_id, :value => @donation.id
               = f.hidden_field :school, :value => @donation.institution.name if @donation.institution
               = f.hidden_field :school, :value => @donation.custom_institution_name if @donation.custom_institution_name

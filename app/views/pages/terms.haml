@@ -48,7 +48,7 @@
         %dd Any business or person whose box number is selected at the final    drawing will receive their prize or prizes and educational will    receive there donation or donations from Tomorrows Future Foundation  on   the winners behalf.
         %dd Prize will be paid in full no longer than 30 days after final drawing.
       %div{:style => 'margin:0 auto;width:200px;padding-top:20px;text-align:center;'}
-        = link_to 'Agree', '/donations/payment', :class => 'styled_button blue', :style => 'color:white;'
+        = link_to 'Agree', new_donation_path, :class => 'styled_button blue', :style => 'color:white;'
 .clear
 - content_for :bannerimg do
   %img{:height => "258", :src => "/images/bannerimg_teacher.png", :width => "1000"}/

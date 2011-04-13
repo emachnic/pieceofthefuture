@@ -16,10 +16,10 @@
           %tbody
             %tr
               %th Transaction Number
-              %td= @donation.params["transaction_id"]
+              %td= @donation.transactions.last.params["transaction_id"]
             %tr
               %th Transaction Timestamp
-              %td= @donation.params["timestamp"]
+              %td= @donation.transactions.last.params["timestamp"]
             %tr
               %th Donor Name
               %td

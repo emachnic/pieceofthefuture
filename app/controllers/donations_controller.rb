@@ -1,6 +1,6 @@
 class DonationsController < ApplicationController
-  ssl_required :payment, :credit
-  ssl_allowed :send_information
+  ssl_required :new, :create
+  ssl_allowed :send_information, :receipt
   # Set BASE_AMOUNT to $5.00
   BASE_AMOUNT = 500
   
@@ -65,6 +65,10 @@ class DonationsController < ApplicationController
     @donation = Donation.find(params[:id])
     @contact_form = ContactForm.new(params[:contact_form])
   end
+  
+  def failure
+    
+  end
 
   # GET /donations/1
   # GET /donations/1.xml
@@ -80,7 +84,9 @@ class DonationsController < ApplicationController
   # GET /donations/new
   # GET /donations/new.xml
   def new
+    @donation = Donation.new(params[:donation])
     @states = Decoder::Countries[:US].states.invert
+    @countries = Decoder::Countries
   end
 
   # GET /donations/1/edit
@@ -92,16 +98,18 @@ class DonationsController < ApplicationController
   # POST /donations.xml
   def create
     @donation = Donation.new(params[:donation])
+    @states = Decoder::Countries[:US].states.invert
+    @donation.ip_address = request.remote_ip
     expire_page :controller => :home, :action => :index
 
-    respond_to do |format|
-      if @donation.save
-        format.html { redirect_to(@donation, :notice => 'Donation was successfully created.') }
-        format.xml  { render :xml => @donation, :status => :created, :location => @donation }
+    if @donation.save
+      if @donation.purchase
+        redirect_to :action => 'send_information', :id => @donation
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @donation.errors, :status => :unprocessable_entity }
+        render :action => 'failure'
       end
+    else
+      render :action => 'new'
     end
   end
 
@@ -134,46 +142,5 @@ class DonationsController < ApplicationController
   end
   
   protected
-  
-    def paypal_gateway
-      ActiveMerchant::Billing::PaypalRecurringGateway.new(YAML.load_file(File.join(RAILS_ROOT, 'config', 'paypal.yml'))[RAILS_ENV].symbolize_keys)
-    end
-    
-    def paypal_error(response)
-      @paypal_error = response.message
-      render :action => 'index'
-    end
-    
-    def purchase_options
-      {
-        :ip => request.remote_ip,
-        :billing_address => {
-          :address1 => params[:address1],
-          :address2 => params[:address2],
-          :city => params[:city],
-          :state => params[:state],
-          :country => 'US',
-          :zip => params[:zip],
-          :phone => params[:phone]
-        },
-        :box_quantity => params[:box_quantity],
-        :first_name => params[:first_name],
-        :last_name => params[:last_name],
-        :ad_website => params[:ad_website],
-        :institution => params[:institution],
-        :email => params[:email]
-      }
-    end
-    
-    def credit_card
-      {
-        :first_name => params[:first_name],
-        :last_name => params[:last_name],
-        :month => params[:month],
-        :year => params[:year],
-        :type => params[:type],
-        :number => params[:number],
-        :verification_value => params[:verification_value]
-      }
-    end
+
 end
