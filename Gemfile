@@ -17,6 +17,7 @@ gem 'hoptoad_notifier'
 gem 'dalli'
 #gem 'meta_search'
 gem 'rack-rewrite', '~> 1.0.0'
+gem 'green_light'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.5'

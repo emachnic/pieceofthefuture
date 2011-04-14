@@ -1,4 +1,4 @@
-= form_for @donation do |f|
+= form_for @donation, :html => {:class => 'green_light'} do |f|
   - unless f.error_messages.empty?
     .error= f.error_messages
   %table
@@ -19,7 +19,7 @@
     %tr
       %td.label= f.label :institution_id, 'School:'
       %td
-        = f.select :institution_id, options_from_collection_for_select(Institution.order("name ASC"), "id", "name"), :include_blank => true
+        = f.select :institution_id, options_from_collection_for_select(Institution.order("name ASC"), "id", "name", session[:institution_id]), :include_blank => true
         %br
         %span.small
           = link_to "My Institution's not listed", "javascript:void(0);", :id => 'custom_institution_link'
@@ -35,7 +35,7 @@
     %tr
       %td.label= label_tag :classroom_id, 'Classroom:'
       %td
-        = f.grouped_collection_select :classroom_id, Institution.order("name ASC"), :classroom_ordered, :name, :id, :teacher_with_class, :include_blank => true
+        = f.select :classroom_id, option_groups_from_collection_for_select(Institution.order("name ASC"), :classrooms, :name, :id, :teacher_with_class, session[:classroom_id])
         %br
         %span.small
           = link_to "My Classroom's not listed", "javascript:void(0);", :id => 'custom_classroom_link'

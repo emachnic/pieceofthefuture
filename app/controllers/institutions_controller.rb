@@ -39,6 +39,11 @@ class InstitutionsController < ApplicationController
     end
   end
 
+  def get_institution
+    session[:institution_id] = params[:institution_id]
+    redirect_to terms_and_conditions_path
+  end
+
   # GET /institutions/1/edit
   def edit
     @institution = Institution.find(params[:id])

@@ -10,12 +10,13 @@
       %img{:height => "64", :src => "/images/thecontent_subtitle_newclassroom.png", :width => "890"}/
   %tr
     %td{:align => "left", :valign => "top"}
-      %p
+      %h3.resource_name= @classroom.name
+      = form_tag '/classrooms/get_classroom' do
+        = hidden_field_tag :classroom_id
+        = submit_tag 'Donate to this Classroom'
+      %p.clear
         %b Teacher:
         = @classroom.teacher
-      %p
-        %b Class:
-        = @classroom.name
       %p
         %b Phone:
         = @classroom.phone

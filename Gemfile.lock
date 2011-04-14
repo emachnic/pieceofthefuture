@@ -101,6 +101,7 @@ GEM
       rake (>= 0.8.7)
     gherkin (2.3.5)
       json (>= 1.4.6)
+    green_light (0.0.3)
     haml (3.0.25)
     heroku (1.20.1)
       launchy (~> 0.3.2)
@@ -201,6 +202,7 @@ DEPENDENCIES
   devise
   fabrication
   faker
+  green_light
   haml
   heroku
   high_voltage

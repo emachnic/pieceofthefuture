@@ -10,8 +10,11 @@
       %img{:height => "64", :src => "/images/thecontent_subtitle_newinstitution.png", :width => "890"}/
   %tr
     %td{:align => "left", :valign => "top"}
-      %h4= @institution.name
-      %p
+      %h4.resource_name= @institution.name
+      = form_tag '/institutions/get_institution' do
+        = hidden_field_tag :institution_id, "#{@institution.id}"
+        = submit_tag 'Donate to this Institution'
+      %p.clear
         %b Contact name:
         = @institution.contact_name
       %p

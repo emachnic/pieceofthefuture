@@ -1,13 +1,13 @@
 Pieceofthefuture::Application.routes.draw do      
   devise_for :users
   get '/institutions/search' => 'institutions#search'
+  post '/institutions/get_institution'
+  post '/classrooms/get_classroom'
   resources :institutions
   resources :classrooms
-  
+
   match '/donations/receipt/:id' => 'donations#receipt', :as => :receipt
   match '/donations/send_information/:id' => 'donations#send_information', :as => :send_information
-  match '/donations/payment', :to => 'donations#payment', :as => :donation_payment
-  post 'donations/credit'
   resources :donations    
   post '/donate/send_email'
   match 'faq' => 'high_voltage/pages#show', :id => 'faq'

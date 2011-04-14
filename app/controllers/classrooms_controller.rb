@@ -34,6 +34,11 @@ class ClassroomsController < ApplicationController
     end
   end
 
+  def get_classroom
+    session[:classroom_id] = params[:classroom_id]
+    redirect_to terms_and_conditions_path
+  end
+
   # GET /classrooms/1/edit
   def edit
     @classroom = Classroom.find(params[:id])

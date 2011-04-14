@@ -1,5 +1,7 @@
 class DonationsController < ApplicationController
-  ssl_required :new, :create
+  if ::Rails.env == 'production'
+    ssl_required :new, :create
+  end
   ssl_allowed :send_information, :receipt
   # Set BASE_AMOUNT to $5.00
   BASE_AMOUNT = 500
