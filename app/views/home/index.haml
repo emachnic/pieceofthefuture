@@ -10,6 +10,9 @@
     %span.label Email:
     = mail_to 'noelle.bowen@hotmail.com'
     %br
+    %span.label School:
+    = link_to 'Highlands', institution_path(1)
+    %br
     %span.label Classroom:
     = link_to "Hogan's Heroes", classroom_path(1)
     %br
@@ -28,6 +31,9 @@
     %span.label Email:
     = mail_to 'hoganj3@duvalschool.org'
     %br
+    %span.label School:
+    = link_to 'Highlands', institution_path(1)
+    %br
     %span.label Classroom:
     = link_to "Hogan's Heroes", classroom_path(1)
     %br
@@ -36,25 +42,28 @@
     %br
     %span.label Website:
     = link_to 'http://www.hogan.bodybyvi.com/', 'http://http://www.hogan.bodybyvi.com/', :target => '_blank'
+  = link_to '', 'http://www.tomorrowsfuturefoundation.org', :id => 'joshua_hogan_2', :class => 'box_link_left', :target => '_blank'
+  .tooltip.portrait
+    #joshua_hogan_2_img.ad_img
+    %br
+    %span.label Buyer:
+    Joshua Hogan
+    %br
+    %span.label Email:
+    = mail_to 'joshua@tomorrowsfuturefoundation.org'
+    %br
+    %span.label School:
+    = link_to 'Highlands', institution_path(1)
+    %br
+    %span.label Classroom:
+    = link_to 'Carter - Paula Carter', classroom_path(2)
+    %br
+    %span.label Donated:
+    $20.00
+    %br
+    %span.label Website:
+    = link_to 'www.google.com', 'http://www.google.com', :target => '_blank'
   /
-    = link_to '', 'http://www.tomorrowsfuturefoundation.org', :id => 'joshua_hogan_2', :class => 'box_link_left', :target => '_blank'
-    .tooltip.portrait
-      #joshua_hogan_2_img.ad_img
-      %br
-      %span.label Buyer:
-      Joshua Hogan
-      %br
-      %span.label Email:
-      = mail_to 'joshua@tomorrowsfuturefoundation.org'
-      %br
-      %span.label School:
-      = link_to 'Highlands Elementary', '/institutions/highlands-elementary-'
-      %br
-      %span.label Donated:
-      $20.00
-      %br
-      %span.label Website:
-      = link_to 'www.tomorrowsfuturefoundation.org', 'http://www.tomorrowsfuturefoundation.org', :target => '_blank'
     = link_to '', 'http://www.duvalschools.org/tlae/Twin_Lakes_Academy_Elementary/Welcome_1.html', :id => 'joshua_hogan_3', :class => 'box_link_left', :targe => '_blank'
     .tooltip.portrait
       #joshua_hogan_3_img.ad_img

@@ -1081,6 +1081,16 @@ dd {
       background: url("../images/boxes/box_ads.png") -310px 0 no-repeat;
       height: 200px;
       width: 300px; }
+    #pixelwrapper #grid #joshua_hogan_2 {
+      background-position: -30px 0;
+      height: 20px;
+      left: 30px;
+      top: 0;
+      width: 20px; }
+    #pixelwrapper #grid #joshua_hogan_2_img {
+      background: url("../images/boxes/box_ads.png") -620px 0 no-repeat;
+      height: 200px;
+      width: 300px; }
     #pixelwrapper #grid .tooltip {
       background: url("../images/white_large.png") no-repeat;
       color: black;
