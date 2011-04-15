@@ -1,3 +1,10 @@
+- content_for :head do
+  :javascript
+    function popitup(url) {
+    	newwindow=window.open(url,'name','height=300,width=300');
+    	if (window.focus) {newwindow.focus()}
+    	return false;
+    }
 = form_for @donation, :html => {:class => 'green_light'} do |f|
   - unless f.error_messages.empty?
     .error= f.error_messages
@@ -134,7 +141,9 @@
           %a{ :href => '/cvv.html', :onclick => "return popitup('/cvv.html')"} Click for information
     %tr
       %td.label{:style => 'vertical-align:middle;'}
-        %span#siteseal
-          %script{ :type => "text/javascript", :src => "https://seal.godaddy.com/getSeal?sealID=qTUaX5sVOLCPieu3q0Nvz90mRyYiJKCPeyFYmDvsj2fbhVmFkIXWbnss"}
+        %p#siteseal
+          = image_tag 'godaddy_siteseal.gif', :alt => 'SSL provided by GoDaddy'
       %td
         = f.submit 'Submit', :class => "styled_button blue", :style => 'color:white;'
+- content_for :bannerimg do
+  %img{:height => "258", :src => "/images/bannerimg_puzzle.png", :width => "1000"}/
