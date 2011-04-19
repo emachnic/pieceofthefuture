@@ -35,7 +35,7 @@ class DonationsController < ApplicationController
   end
 
   def update_classroom_select
-    classrooms = Classroom.where(:institution_id => params[:id]).order(:name) unless (params[:id].blank? || (params[:id] == 0))
+    classrooms = Classroom.where(:institution_id => params[:id]).order(:name) unless (params[:id] == 0)
     render :partial => 'classrooms', :locals => {:classrooms => classrooms}
   end
 

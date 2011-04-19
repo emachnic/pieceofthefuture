@@ -1,4 +1,6 @@
-- if classrooms
+- if (params[:id].blank?) && !classrooms.blank?
+  = select :donation, :classroom_id, option_groups_from_collection_for_select(Institution.order("name ASC"), :classrooms, :name, :id, :teacher_with_class, session[:classroom_id]), :prompt => "--Select Classroom--"
+- elsif !classrooms.blank?
   = select :donation, :classroom_id, classrooms.collect {|c| [c.name, c.id]}
 - else
-  = select :donation, :classroom_id, option_groups_from_collection_for_select(Institution.order("name ASC"), :classrooms, :name, :id, :teacher_with_class, session[:classroom_id])
+  = select :donation, :classroom_id, option_groups_from_collection_for_select(Institution.order("name ASC"), :classrooms, :name, :id, :teacher_with_class, session[:classroom_id]), :prompt => "--Select Classroom--"

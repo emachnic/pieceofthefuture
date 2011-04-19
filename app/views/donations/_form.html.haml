@@ -19,7 +19,7 @@
     %tr
       %td.label= f.label :institution_id, 'School:'
       %td
-        = f.select :institution_id, options_from_collection_for_select(Institution.order("name ASC"), "id", "name", session[:institution_id]), :include_blank => true
+        = f.select :institution_id, options_from_collection_for_select(Institution.order("name ASC"), "id", "name", session[:institution_id]), :prompt => "--Select Institution--"
         %br
         %span.small
           = link_to "My Institution's not listed", "javascript:void(0);", :id => 'custom_institution_link'
