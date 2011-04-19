@@ -1024,7 +1024,7 @@ dd {
   #header #kids {
     float: left;
     height: 181px;
-    margin-top: 55px; }
+    margin-top: 72px; }
     #header #kids img {
       border: 0;
       height: 181px;
@@ -1039,9 +1039,9 @@ dd {
       margin-bottom: -17px;
       width: 536px; }
   #header #brought_by {
-    font-size: 12px;
-    width: 536px;
-    margin: 10px 0 0 0px; }
+    font-size: 14px;
+    width: 500px;
+    margin: 10px 0 0 36px; }
     #header #brought_by a {
       color: #333333; }
       #header #brought_by a:hover {
@@ -1091,6 +1091,16 @@ dd {
       background: url("../images/boxes/box_ads.png") -620px 0 no-repeat;
       height: 200px;
       width: 300px; }
+    #pixelwrapper #grid #robinsons_1 {
+      background-position: -50px 0;
+      height: 270px;
+      left: 50px;
+      top: 0;
+      width: 40px; }
+    #pixelwrapper #grid #robinsons_1_img {
+      background: url("../images/boxes/box_ads.png") 0 -210px no-repeat;
+      height: 300px;
+      width: 200px; }
     #pixelwrapper #grid .tooltip {
       background: url("../images/white_large.png") no-repeat;
       color: black;

@@ -11,10 +11,10 @@
     = mail_to 'noelle.bowen@hotmail.com'
     %br
     %span.label School:
-    = link_to 'Highlands', institution_path(1)
+    = link_to 'Sandalwood', institution_path(3)
     %br
     %span.label Classroom:
-    = link_to "Hogan's Heroes", classroom_path(1)
+    = link_to "Noelle Bowen", classroom_path(3)
     %br
     %span.label Donated:
     $5.00
@@ -63,6 +63,24 @@
     %br
     %span.label Website:
     = link_to 'www.google.com', 'http://www.google.com', :target => '_blank'
+  = link_to '', 'http://www.tomorrowsfuturefoundation.org', :id => 'robinsons_1', :class => 'box_link_left', :target => '_blank'
+  .tooltip.portrait
+    #robinsons_1_img.ad_img
+    %br
+    %span.label Buyer:
+    The Robinsons
+    %br
+    %span.label School:
+    = link_to 'Sandalwood', institution_path(3)
+    %br
+    %span.label Classroom:
+    = link_to 'Noelle Bowen', classroom_path(3)
+    %br
+    %span.label Donated:
+    $530.00
+    %br
+    %span.label Website:
+    = link_to 'www.tomorrowsfuturefoundation.org', 'http://www.tomorrowsfuturefoundation.org', :target => '_blank'
   /
     = link_to '', 'http://www.duvalschools.org/tlae/Twin_Lakes_Academy_Elementary/Welcome_1.html', :id => 'joshua_hogan_3', :class => 'box_link_left', :targe => '_blank'
     .tooltip.portrait
