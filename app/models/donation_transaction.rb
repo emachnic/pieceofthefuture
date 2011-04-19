@@ -28,6 +28,6 @@ class DonationTransaction < ActiveRecord::Base
     self.success       = false
     self.authorization = nil
     self.message       = e.message
-    self.params        = {}    
+    self.params        = {}
   end
 end

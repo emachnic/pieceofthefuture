@@ -27,7 +27,7 @@ class Donation < ActiveRecord::Base
   belongs_to :classroom
   has_many  :transactions, :class_name => 'DonationTransaction'
   
-  validates_presence_of :first_name
+  validates :first_name, :last_name, :presence => true
   validates :email, :presence => true, :confirmation => true
   validates :box_quantity, :format => {:with => /^(1|\d*[24680])$/, :message => "must be '1' or even number."}
   

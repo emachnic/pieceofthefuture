@@ -8,7 +8,8 @@ Pieceofthefuture::Application.routes.draw do
 
   match '/donations/receipt/:id' => 'donations#receipt', :as => :receipt
   match '/donations/send_information/:id' => 'donations#send_information', :as => :send_information
-  resources :donations    
+  match 'donations/update_classroom_select/:id' => 'donations#update_classroom_select'
+  resources :donations
   post '/donate/send_email'
   match 'faq' => 'high_voltage/pages#show', :id => 'faq'
   match 'about_tff' => 'high_voltage/pages#show', :id => 'about_tff'

@@ -1,4 +1,4 @@
-= form_for @donation, :html => {:class => 'green_light'} do |f|
+= form_for @donation, :remote => true, :html => {:class => 'green_light'} do |f|
   - unless f.error_messages.empty?
     .error= f.error_messages
   %table
@@ -35,8 +35,8 @@
     %tr
       %td.label= label_tag :classroom_id, 'Classroom:'
       %td
-        = f.select :classroom_id, option_groups_from_collection_for_select(Institution.order("name ASC"), :classrooms, :name, :id, :teacher_with_class, session[:classroom_id])
-        %br
+        #classroom_select
+          = render 'classrooms', :collection => @classrooms, :locals => @donation
         %span.small
           = link_to "My Classroom's not listed", "javascript:void(0);", :id => 'custom_classroom_link'
         .custom_fields

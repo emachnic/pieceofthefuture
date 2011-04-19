@@ -122,4 +122,12 @@ describe DonationsController do
     end
   end
 
+  describe "failure" do
+    it "should show the last failed transaction" do
+      @transaction = Fabricate(:donation_transaction, :donation_id => 1, :success => false, :authorization => nil, :message => "Insufficient funds", :params => {})
+      get :failure
+      response.should have_content("Insufficient funds")
+    end
+  end
+
 end

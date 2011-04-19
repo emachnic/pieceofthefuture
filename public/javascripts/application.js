@@ -9,15 +9,29 @@ $(document).ready(function(){
   $('tr').find('.custom_fields').hide().end().find('.small > a').click(function(){
     $(this).closest('tr').find('.custom_fields').slideToggle();
   });
-  
+
   $('td').find('.classrooms').hide().end().find('.institution_name > a').click(function(){
     $(this).closest('td').find('.classrooms').toggle();
-  });   
-  
+  });
+
   $("#search input").keyup(function() {
     $.get($("#search").attr("action"), $("#search").serialize(), null, "script");
     return false;
   });
+})
+
+jQuery(function($) {
+  // when the #country field changes
+  $("#donation_institution_id").change(function() {
+    // make a POST call and replace the content
+    var institution = $('select#donation_institution_id :selected').val();
+    if(institution == "") institution="0";
+    jQuery.get('/donations/update_classroom_select/' + institution, function(data){
+        $("#classroom_select").html(data);
+    })
+    return false;
+  });
+
 })
 
 $(function() {

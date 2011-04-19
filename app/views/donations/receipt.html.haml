@@ -38,7 +38,7 @@
             - unless @donation.classroom.nil?
               %tr
                 %th Chosen Classroom
-                %td= link_to @donation.classroom.name
+                %td= link_to @donation.classroom.name, @donation.classroom
             - unless @donation.custom_institution_name.nil? || @donation.custom_institution_name == ""
               %tr
                 %th Custom School

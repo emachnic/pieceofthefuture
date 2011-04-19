@@ -2,23 +2,7 @@ require 'spec_helper'
 
 describe "donations/new.html.erb" do
   before(:each) do
-    assign(:donation, stub_model(Donation,
-      :success => false,
-      :authorization => "MyString",
-      :message => "MyString",
-      :params => "MyText",
-      :first_name => "MyString",
-      :last_name => "MyString",
-      :ad_website => "MyString",
-      :email => "MyString",
-      :box_quantity => 1,
-      :custom_institution_name => "MyString",
-      :custom_classroom_name => "MyString",
-      :custom_classroom_teacher => "MyString",
-      :custom_classroom_school => "MyString",
-      :institution_id => 1,
-      :classroom_id => 1
-    ).as_new_record)
+
   end
 
   it "renders new donation form" do
