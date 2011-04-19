@@ -1039,9 +1039,9 @@ dd {
       margin-bottom: -17px;
       width: 536px; }
   #header #brought_by {
-    font-size: 10px;
+    font-size: 12px;
     width: 536px;
-    margin: 10px 0 0 35px; }
+    margin: 10px 0 0 0px; }
     #header #brought_by a {
       color: #333333; }
       #header #brought_by a:hover {

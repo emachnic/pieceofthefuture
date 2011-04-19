@@ -35,11 +35,11 @@
         %dd There might be occasional downtime for site maintenance.
         %dd Once you have ordered and the funds have cleared your box will be published within  72 hours.
         %dl
-          %dt                             
+          %dt
             %h3 Limited Time Give Away:
         %dd For a Limited amount of time (until August10th 2011), you will receive a iPad raffle  ticket for each box purchased.
         %dl
-          %dt                             
+          %dt
             %h3 Final Drawing for Boxes
         %dd The Final drawing for the giveaways will be done in a lottery   type drawing  with tumbler type device. Anyone who wishes to be present   at the actual  drawing may do so.
         %dd The drawing will be held in Jacksonville Florida when and only   when all  200,000 boxes on the site are purchased. The drawing will be   held within  60 days after the final box is purchased.
@@ -47,7 +47,15 @@
         %dd The winner of this fundraiser need not be present to win.
         %dd Any business or person whose box number is selected at the final    drawing will receive their prize or prizes and educational will    receive there donation or donations from Tomorrows Future Foundation  on   the winners behalf.
         %dd Prize will be paid in full no longer than 30 days after final drawing.
-      %div{:style => 'margin:0 auto;width:200px;padding-top:20px;text-align:center;'}
+      %div{:style => 'margin:0 auto;width:800px;padding-top:20px;text-align:center;'}
+        %p
+          ** Please note that your donation to
+          = link_to 'www.pieceofthefuture.org', root_url
+          will automatically be
+          renewed by PayPal services.  If you wish for this donation to be a one-time donation
+          and do not wish to have your donation auto-renewed, please send an email or
+          = link_to 'contact us', contact_path
+          if you would like this removed. **
         = link_to 'Agree', new_donation_path, :class => 'styled_button blue', :style => 'color:white;'
 .clear
 - content_for :bannerimg do

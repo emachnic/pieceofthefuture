@@ -32,7 +32,7 @@
             %img{:height => "31", :src => "/images/thecontent_faqs_03.png", :width => "407"}/
         %tr
           %td{:align => "left", :style => "padding-left: 52px;", :valign => "top"}
-            In an effort to raise awareness and funds, we are selling $200,000 boxes        for $5 per box. The motivation for doing this is to SUPPORT   EDUCATION.            Everyone is welcome to become part of the future   and donate to receive a box,      which are available for $5.
+            In an effort to raise awareness and funds, we are selling 200,000 boxes for $5 per box. The motivation for doing this is to SUPPORT   EDUCATION.            Everyone is welcome to become part of the future   and donate to receive a box,      which are available for $5.
             %br/
             = succeed "You" do
               %br/
@@ -63,7 +63,9 @@
             %img{:height => "31", :src => "/images/thecontent_faqs_05.png", :width => "407"}/
         %tr
           %td{:align => "left", :style => "padding-left: 52px;", :valign => "top"}
-            You will have the opportunity to win 513 prizes totaling in $500,000 Link to piece of the future Prize page.
+            You will have the opportunity to win 513
+            = link_to 'prizes', prizes_path
+            totaling $500,000
             %br/
             %br/
             You will also have an image and a link to your site on the homepage of a site that could potentially be seen by millions of people over the coming years.
