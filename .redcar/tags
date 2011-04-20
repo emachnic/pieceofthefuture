@@ -1,4 +1,4 @@
-1302749410
+1303269003
 ActionView	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	module ActionView
 Application	/Users/evan/RailsApps/pieceofthefuture/config/application.rb	  class Application 
 ApplicationController	/Users/evan/RailsApps/pieceofthefuture/app/controllers/application_controller.rb	class ApplicationController 
@@ -61,6 +61,7 @@ SslRequirementController	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/s
 SslRequirementTest	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/ssl_requirement/test/ssl_requirement_test.rb	class SslRequirementTest 
 User	/Users/evan/RailsApps/pieceofthefuture/app/models/user.rb	class User 
 User	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	    class User 
+a	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.validate.min.js	function a(e){var f=c.data(this[0].form,"validator");e="on"+e.type.replace(/^validate/,"");f.settings[e]&&f.settings[e].call(f,this[0])}this.labelContainer=c(this.settings.errorLabelContainer)
 a	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/ssl_requirement/test/ssl_requirement_test.rb	  def a
 active_if?	/Users/evan/RailsApps/pieceofthefuture/app/helpers/application_helper.rb	  def active_if?(name)
 addToPrefiltersOrTransports	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function addToPrefiltersOrTransports( structure )
@@ -91,8 +92,8 @@ create	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controll
 create	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def create
 createActiveXHR	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function createActiveXHR()
 createStandardXHR	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function createStandardXHR()
-credit	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def credit    
 credit_card	/Users/evan/RailsApps/pieceofthefuture/app/models/donation.rb	  def credit_card
+d	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.validate.min.js	function d(e){e=c.event.fix(e);e.type=b;return c.event.handle.call(this,e)}c.event.special[b]={setup:function(){this.addEventListener(a,d,true)},teardown:function(){this.removeEventListener(a,d,true)},handler:function(e){arguments[0]=c.event.fix(e);arguments[0].type=b;return c.event.handle.apply(this,arguments)}}})
 d	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/ssl_requirement/test/ssl_requirement_test.rb	  def d
 dataAttr	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function dataAttr( elem, key, data )
 defaultDisplay	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function defaultDisplay( nodeName )
@@ -116,6 +117,7 @@ down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110410053100_create_don
 down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110412011056_change_class_name_to_name.rb	  def self.down
 down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110413150550_change_donation_attributes.rb	  def self.down
 down	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110413154258_create_donation_transactions.rb	  def self.down
+e	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.validate.min.js	function e(){if(b.settings.submitHandler){if(b.submitButton)var f=c("<input type='hidden'/>")
 edit	/Users/evan/RailsApps/pieceofthefuture/app/controllers/classrooms_controller.rb	  def edit
 edit	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def edit
 edit	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def edit
@@ -142,7 +144,9 @@ genFx	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	functi
 getAll	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function getAll( elem )
 getWH	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function getWH( elem, name, extra )
 getWindow	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function getWindow( elem )
+get_classroom	/Users/evan/RailsApps/pieceofthefuture/app/controllers/classrooms_controller.rb	  def get_classroom
 get_classrooms	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def get_classrooms
+get_institution	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def get_institution
 handleMethod	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/rails.js	function handleMethod(link)
 handleRemote	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/rails.js	function handleRemote(element)
 handler	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function handler( donor )
@@ -171,7 +175,6 @@ new	/Users/evan/RailsApps/pieceofthefuture/app/controllers/classrooms_controller
 new	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def new
 new	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def new
 nonBlankInputs	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/rails.js	function nonBlankInputs(form, specifiedSelector)
-payment	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def payment
 paypal_error	/Users/evan/RailsApps/pieceofthefuture/app/models/donation.rb	  def paypal_error(response)
 paypal_gateway	/Users/evan/RailsApps/pieceofthefuture/app/models/donation.rb	  def paypal_gateway
 persisted?	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	        def persisted?() 
@@ -268,6 +271,7 @@ up	/Users/evan/RailsApps/pieceofthefuture/db/migrate/20110413154258_create_donat
 update	/Users/evan/RailsApps/pieceofthefuture/app/controllers/classrooms_controller.rb	  def update
 update	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def update
 update	/Users/evan/RailsApps/pieceofthefuture/app/controllers/institutions_controller.rb	  def update
+update_classroom_select	/Users/evan/RailsApps/pieceofthefuture/app/controllers/donations_controller.rb	  def update_classroom_select
 url_for	/Users/evan/RailsApps/pieceofthefuture/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	  def url_for(options)
 validate_card	/Users/evan/RailsApps/pieceofthefuture/app/models/donation.rb	  def validate_card
 winnow	/Users/evan/RailsApps/pieceofthefuture/public/javascripts/jquery.js	function winnow( elements, qualifier, keep )
