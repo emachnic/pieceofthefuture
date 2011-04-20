@@ -816,35 +816,19 @@ a.styled_button {
 
 /* CSS Document */
 /*
- *
- *
  *DESIGNED & DEVELOPED BY COMPOSEDPIXELS
- *
  *2011
- *
  *____________________________________________________________________ */
 /*
- *
- *
  *VARIABLES
  *
- *
- *
  *____________________________________________________________________ */
 /*
- *
- *
  *Mixins
  *
- *
- *
  *____________________________________________________________________ */
 /*
- *
- *
  *STRUCTURE
- *
- *
  *
  *____________________________________________________________________ */
 body, td, th {
@@ -878,11 +862,7 @@ a img {
   padding-right: 1em; }
 
 /*
- *
- *
  *LINKS
- *
- *
  *
  *____________________________________________________________________ */
 a:link, a:visited {
@@ -907,11 +887,7 @@ a:hover {
     white-space: nowrap; }
 
 /*
- *
- *
  *TYPE
- *
- *
  *
  *____________________________________________________________________ */
 .normal {
@@ -954,11 +930,7 @@ h1, h2, h3, h4, h5, h6 {
   clear: both; }
 
 /*
- *
- *
  *CONTENT
- *
- *
  *
  *____________________________________________________________________ */
 #wrapper {
@@ -1058,7 +1030,7 @@ dd {
     height: 40000px;
     position: relative; }
     #pixelwrapper #grid .box_link_left, #pixelwrapper #grid .box_link_right {
-      background: url("../images/image_map.gif") no-repeat;
+      background: url("../images/image_map.png") no-repeat;
       display: block;
       position: absolute; }
     #pixelwrapper #grid #noelle_bowen_1 {
@@ -1093,10 +1065,10 @@ dd {
       width: 300px; }
     #pixelwrapper #grid #robinsons_1 {
       background-position: -50px 0;
-      height: 270px;
+      height: 140px;
       left: 50px;
       top: 0;
-      width: 40px; }
+      width: 80px; }
     #pixelwrapper #grid #robinsons_1_img {
       background: url("../images/boxes/box_ads.png") 0 -210px no-repeat;
       height: 300px;
