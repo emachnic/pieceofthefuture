@@ -1,11 +1,14 @@
 set :application, "pieceofthefuture"
-set :deploy_to, "/var/www/#{application}"
-set :use_sudo, true
-set :repository,  "git@git.assembla.com:git-of-the-future.git"
+set :deploy_to, "/home/emachnic/public_html/#{application}"
+set :use_sudo, false
+set :repository,  "git@github.com:emachnic/pieceofthefuture.git"
 set :scm, :git
+set :branch, "master"
+set :deploy_via, :remote_cache
 set :user, "emachnic"
 set :password, "Potf2011"
 set :domain, "184.168.91.58"
+ssh_options[:forward_agent] = true
 role :web, domain
 role :app, domain
 role :db,  domain, :primary => true # This is where Rails migrations will run
