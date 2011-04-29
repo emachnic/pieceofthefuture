@@ -11,4 +11,6 @@
 #
 
 class Box < ActiveRecord::Base
+  validates :name, :quantity, :presence => true
+  validates :quantity, :numericality => {:only_integer => true}, :format => {:with => /^\d*$/}
 end
