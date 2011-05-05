@@ -1,4 +1,5 @@
 class InstitutionsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:edit, :destroy]
   # GET /institutions
   # GET /institutions.xml
   def index        
@@ -47,6 +48,7 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1/edit
   def edit
     @institution = Institution.find(params[:id])
+    @states = Decoder::Countries[:US].states.invert
   end
 
   # POST /institutions

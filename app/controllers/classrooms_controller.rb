@@ -1,4 +1,5 @@
 class ClassroomsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:edit, :destroy]
   # GET /classrooms
   # GET /classrooms.xml
   def index

@@ -1,4 +1,4 @@
-- title "Piece of the Future => Edit #{@classroom.class_name}"
+- title "Piece of the Future => Edit #{@classroom.name}"
 #page
   .box_t1
     .box_t2
@@ -10,9 +10,6 @@
           = content_tag :div, msg, :id => "flash_#{name}"
         %h1 Editing classroom
         = render 'form'
-        = link_to 'Show', @classroom
-        |
-        \#{link_to 'Back', classrooms_path}
   .box_b1
     .box_b2
       .box_b3
