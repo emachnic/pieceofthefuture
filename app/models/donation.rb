@@ -40,7 +40,7 @@ class Donation < ActiveRecord::Base
     response = paypal_gateway.create_profile(nil, :credit_card => credit_card,
       :description => 'Piece of the Future Box', :start_date => Date.today,
       :period => 'Year', :frequency => 1, :amount => price_in_cents, 
-      :initial_amount => price_in_cents, :auto_bill_outstanding => true)
+      :initial_amount => 0, :auto_bill_outstanding => true)
     transactions.create!(:action => 'purchase', :amount => price_in_cents, :response => response)
     response.success?
   end
